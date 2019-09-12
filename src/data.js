@@ -1,4 +1,4 @@
-let testData = [
+let data = [
   {
     users: [
       {
@@ -477,4 +477,4 @@ let testData = [
   }
 ]
 
-export default testData;
+export default data;

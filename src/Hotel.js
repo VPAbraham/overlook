@@ -1,4 +1,4 @@
-Class Hotel {
+class Hotel {
   constructor(userData, roomData, bookingData, roomServiceData) {
     this.users = userData;
     this.rooms = roomData;
@@ -8,8 +8,8 @@ Class Hotel {
   }
 
   getCurrDay() {
-    currentDay = new Date(Date.now());
-  }
-};
+    this.currentDay = new Date(Date.now());
+  };
+}
 
 export default Hotel;
