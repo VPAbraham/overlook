@@ -4,7 +4,11 @@ Class Hotel {
     this.rooms = roomData;
     this.bookings = bookingData;
     this.roomService = roomServiceData;
-    this.currentDay = currentDay;
+    this.currentDay;
+  }
+
+  getCurrDay() {
+    currentDay = new Date(Date.now());
   }
 };
 
