@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Webpack Starter Kit</title>
+    <title>Overlook</title>
   </head>
   <body>
-    <h1>Webpack Starter Kit</h1>
-
-    <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-
+    <header>  
+      <h1>Overlook</h1>
+      <h4>the leader in hotel booking services</h4>
+    </header>
+    <div id="ui-tabs" class="ui-widget">
+      <ul id="tab-btn-container">
+        <li><a href="#dboard-tab">Dashboard</a></li>
+        <li><a href="#orders-tab">Orders</a></li>
+        <li><a href="#rooms-tab">Rooms</a></li>
+        <li><a href="#customer-tab">Customer</a></li>
+      </ul>
+      <div id="dboard-tab" class="style-tabs">
+        Main Dashboard
+      </div>
+      <div id="orders-tab" class="style-tabs">
+        Orders
+      </div>
+      <div id="rooms-tab" class="style-tabs">
+        <h3>Select Room</h3>
+        <select id="select-menu" class="dropdown">
+          <option value="1">First</option>
+          <option value="2">Second</option>
+          <option value="3">Third</option>
+          <option value="4">Fourth</option>          
+        </select>
+      </div>
+      <div id="customer-tab" class="style-tabs">
+        Customer
+      </div>
+    </div>
     <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
   </body>
 </html>

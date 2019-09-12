@@ -1,6 +1,77 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: pink;
+$primary-background: rgb(197, 225, 185);
+@import "https://fonts.googleapis.com/css?family=Gayathri:400,700&display=swap";
+@import "https://fonts.googleapis.com/css?family=Modak&display=swap";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+}
 
 body {
   background-color: $primary-background;
+}
+
+header {
+  font-family: 'Gayathri', sans-serif;
+}
+
+#ui-tabs {
+  width: 100%;
+  background: grey;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+
+  #tab-btn-container {
+    display: flex;
+    height: 5vh;
+    max-height: 5vh;
+    list-style: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Modak', cursive;
+
+
+    li {
+      width: 100px;
+    }  
+  }
+
+  #dboard-tab {
+    background: blue;
+  }
+
+  #orders-tab {
+    background: red;
+  }
+
+  #rooms-tab {
+    background: green;
+  }
+
+  #customer-tab {
+    background: rgb(117, 43, 96);
+  }
+  .style-tabs {
+    color: #787878;
+    background-position: center 3px;
+    padding-top: 40px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+.dropdown {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  background-color: white;
 }
