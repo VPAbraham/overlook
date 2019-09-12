@@ -3,7 +3,7 @@ class Customer {
     this.id = id;
     this.name = name;
     this.bookings = bookings || [];
-    this.roomService = roomService || [];
+    this.roomServices = roomServices || [];
     this.rooms = rooms || [];
   }
 }

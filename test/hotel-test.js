@@ -14,6 +14,7 @@ describe('Hotel', () => {
   });
 
   it('should be able to store data from datasets', () => {
+    console.log(hotel);
     expect(data.length).to.equal(4);
     expect(hotel.users).to.be.an('object');
     expect(hotel.rooms).to.be.an('object');
@@ -23,6 +24,12 @@ describe('Hotel', () => {
 
   it('should be able to set the current day', () => {
     hotel.getCurrDay();
-    expect(hotel.currentDay).to.deep.equal(2);
+    expect(hotel.currentDay).to.deep.equal('2019/09/12');
   });
+
+  it('should be able to get', () => {
+    expect().to.equal();
+  });
+
+
 });
