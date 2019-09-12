@@ -23,6 +23,6 @@ describe('Hotel', () => {
 
   it('should be able to set the current day', () => {
     hotel.getCurrDay();
-    expect(hotel.currentDay).to.deep.equal(1);
+    expect(hotel.currentDay).to.deep.equal(2);
   });
 });
