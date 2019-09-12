@@ -14,6 +14,7 @@ describe('Hotel', () => {
   });
 
   it('should be able to store data from datasets', () => {
+    console.log(hotel);
     expect(data.length).to.equal(4);
     expect(hotel.users).to.be.an('object');
     expect(hotel.rooms).to.be.an('object');

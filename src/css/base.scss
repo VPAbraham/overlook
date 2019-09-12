@@ -1,7 +1,7 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
 $primary-background: rgb(197, 225, 185);
-@import "https://fonts.googleapis.com/css?family=Gayathri:400,700&display=swap";
-@import "https://fonts.googleapis.com/css?family=Modak&display=swap";
+// @import "https://fonts.googleapis.com/css?family=Gayathri:400,700&display=swap";
+// @import "https://fonts.googleapis.com/css?family=Modak&display=swap";
 
 * {
   box-sizing: border-box;
@@ -14,7 +14,7 @@ body {
 }
 
 header {
-  font-family: 'Gayathri', sans-serif;
+  // font-family: 'Gayathri', sans-serif;
 }
 
 #ui-tabs {
@@ -33,7 +33,7 @@ header {
     width: 100%;
     align-items: center;
     justify-content: space-around;
-    font-family: 'Modak', cursive;
+    // font-family: 'Modak', cursive;
 
 
     li {
