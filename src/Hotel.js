@@ -1,8 +1,10 @@
 Class Hotel {
   constructor(userData, roomData, bookingData, roomServiceData) {
-    this.userData = userData;
-    this.roomData = roomData;
-    this.bookingData = bookingData;
+    this.users = userData;
+    this.rooms = roomData;
+    this.bookings = bookingData;
+    this.roomService = roomServiceData;
+    this.currentDay = currentDay;
   }
 };
 
