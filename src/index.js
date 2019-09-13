@@ -30,4 +30,11 @@ setTimeout(() => console.log(hotel), 100);
 
 $(document).ready(() => {
   $('#ui-tabs').tabs();
+  $('#dboard-accordion').accordion();
+  $('header').click(() => {
+    $('header').toggle('puff')
+  });
+  // let date = '12/1/2019'
+  // $('.date-today').text(`Hello, today is ${hotel.getCurrDay()}`)
+  
 });
