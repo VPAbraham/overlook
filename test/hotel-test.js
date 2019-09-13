@@ -37,5 +37,12 @@ describe('Hotel', () => {
     expect(hotel.customers.length).to.equal(20);
   })
 
+  it('should be able search for customers with their user data', () => {
+    hotel.instCustomers();
+    expect(hotel.getCustomerByName('Christian Sporer').id).to.equal(3);
+    expect(hotel.getCustomerById(9).name).to.equal('Paula Anderson');
+
+  })
+
 
 });
