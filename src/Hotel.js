@@ -1,11 +1,16 @@
+import Customer from "./Customer";
+
 class Hotel {
   constructor(userData, roomData, bookingData, roomServiceData) {
+    this.currentDay;
     this.users = userData;
     this.rooms = roomData;
     this.bookings = bookingData;
     this.roomService = roomServiceData;
-    this.currentDay;
+    this.customers = [];
   }
+
+  
 
   getCurrDay() {
     let date = new Date,
@@ -24,15 +29,32 @@ class Hotel {
 
   instCustomers() {
     this.forEach((cust) => {
-      let bookings = this.retUserBookings(cust.id);
-      
-    })
+      let bookings = this.getCustomerBookings(cust.id);
+      let roomServices = this.getCustomerRoomService(cust.id);
+      let rooms = this.retUserRooms(user.id);
+      let menu = this.menu;
+      let customer = new Customer(user.id, user.name, bookings, roomServices, rooms, menu, this.currentDay);
+      this.customers.push(customer);
+    });
+  }
+  
+  retCustomerName(name) {
+    return this.instCustomers.find(customer => customer.name === name);
   }
 
-  retUserBookings(id) {
-    return this.bookings.filter(booking => id === booking.userID)
+  getCustomerBookings(id) {
+    return this.bookings.filter(booking => 
+      id === booking.userID)
   }
 
+
+
+
+
+
+
+  hotelPrepHandler() {
+  }
 
 }
 

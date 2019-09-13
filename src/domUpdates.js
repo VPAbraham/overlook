@@ -1,2 +1,2 @@
 import $ from 'jquery';
-import 'jquery-ui-bundle';
+import Hotel from './Hotel.js';
