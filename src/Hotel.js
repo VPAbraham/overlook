@@ -6,7 +6,7 @@ class Hotel {
     this.users = userData;
     this.rooms = roomData;
     this.bookings = bookingData;
-    this.roomService = roomServiceData;
+    this.roomServices = roomServiceData;
     this.customers = [];
   }
 
@@ -30,7 +30,7 @@ class Hotel {
   instCustomers() {
     this.forEach((cust) => {
       let bookings = this.getCustomerBookings(cust.id);
-      let roomServices = this.getCustomerRoomService(cust.id);
+      let roomServices = this.getCustomerRoomServices(cust.id);
       let rooms = this.retUserRooms(user.id);
       let menu = this.menu;
       let customer = new Customer(user.id, user.name, bookings, roomServices, rooms, menu, this.currentDay);
@@ -51,16 +51,16 @@ class Hotel {
       id === booking.userID)
   }
 
-  getCustomerRoomService(id) {
-    return this.bookings.filter(booking =>
-      id === roomService.userID)
+  getCustomerRoomServices(id) {
+    return this.roomServices.filter(roomService =>
+      roomService.userID === id)
   }
 
   getCustomerRooms(id) {
     let custBookings = this.getCustomerBookings(id);
     return this.rooms.filter(room => {
-      let rmNums = custBookings.map(booking => booking.roomNumber);
-      return rmNums.includes(room.number)
+      let roomNumbers = custBookings.map(booking => booking.roomNumber);
+      return roomNumbers.includes(room.number)
     })
   }
 
