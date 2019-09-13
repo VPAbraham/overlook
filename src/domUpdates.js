@@ -1,6 +1,17 @@
 import $ from 'jquery';
-import Hotel from './Hotel.js';
+import 'jquery-ui-bundle';
+import './css/base.scss';
+import Hotel from '../src/Hotel.js';
+import Bookings from '../src/Bookings.js';
+import Customer from '../src/Customer.js';
 
-const DOMUpdates = {
+const domUpdates = {
+
+  displayDate() {},
   
+  displayDate(date) {
+    $('.date-display').text(date)
+  }
 }
+
+export default domUpdates;

@@ -1,15 +1,17 @@
 import Customer from "./Customer";
+import domUpdates from "./domUpdates.js"
 
 class Hotel {
   constructor(userData, roomData, bookingData, roomServiceData) {
     this.currentDay;
-    this.users = userData;
-    this.rooms = roomData;
-    this.bookings = bookingData;
-    this.roomServices = roomServiceData;
+    this.users = userData.users;
+    this.rooms = roomData.rooms;
+    this.bookings = bookingData.bookings;
+    this.roomServices = roomServiceData.roomServices;
     this.customers = [];
+    this.instCustomers();
+    this.domUpdates.displayDate(this.currentDay);
   }
-
   
 
   getCurrDay() {

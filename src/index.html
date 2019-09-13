@@ -12,6 +12,7 @@
         <h1>Overlook</h1>
         <h4>the leader in hotel booking services</h4>
       </span>
+      <p>Today is <span class="date-display"></span></p>
       <div class = "header--search">
         <h3>Search Customers</h3>
         <input class="search-input" placeholder="Customer Name">
@@ -26,17 +27,35 @@
       </ul>
       <div id="dboard-tab" class="style-tabs">
         
-        <div id="dboard-accordion"> Heading
-          <h3><a href="#">First</a></h3>
-          <div>
-            <p>How are youtoday</p>
+        <div id="dboard-accordion"> Overview
+          <h3><a href="#">General Information</a></h3>
+          <div class="gen-info">  
+            <p>There are <span class="rooms-avail">X</span> rooms available.</p>
+            <p><span class="booking-rev">X</span> has been earned from room bookings today.</p>
+            <p>Room service charges today total <span class="room-serv-charges">$X</span>.</p>
+            
           </div>
-          <h3><a href="#">Second</a></h3>          
-          <div>
-            <p>How are youtoday</p>
+          <h3><a href="#">Room Reservations</a></h3>          
+          <div class="res-info">
+            <table>
+              <tr>
+                <th>Room Number</th>
+                <th>Booked On</th>
+              </tr>
+              <tr>
+                <td>Room 1</td>
+                <td>Room 2</td>
+                <td>Room 3</td>
+              </tr>
+              <tr>
+                <td>2019/06/03</td>
+                <td>2019/06/02</td>
+                <td>2019/06/04</td>
+              </tr>
+            </table>
           </div>
             <h3><a href="#">Third</a></h3>
-          <div>
+          <div class="room-info">
             <p>How are youtoday</p>
           </div>
         </div>
