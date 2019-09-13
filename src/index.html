@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Istok+Web&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya&display=swap" rel="stylesheet">
     <title>Overlook</title>
   </head>
   <body>
-    <header>  
-      <h1>Overlook</h1>
-      <h4>the leader in hotel booking services</h4>
+    <header>
+      <span>  
+        <h1>Overlook</h1>
+        <h4>the leader in hotel booking services</h4>
+      </span>
       <div class = "header--search">
         <h3>Search Customers</h3>
         <input class="search-input" placeholder="Customer Name">
       </div>
     </header>
-    <main>
-      <div id="ui-tabs" class="ui-widget">
-        <ul id="tab-btn-container">
-          <li class="tab-selector"><a href="#dboard-tab">Dashboard</a></li>
-          <li class="tab-selector"><a href="#orders-tab">Orders</a></li>
-          <li class="tab-selector"><a href="#rooms-tab">Rooms</a></li>
-          <li class="tab-selector"><a href="#customer-tab">Customer</a></li>
-        </ul>
-        <div id="dboard-tab" class="style-tabs">
-          <span class="">
-            <p></p>
-          </span>
-          <span class="dboard--span-day">
-            <h5>Today's Date is:</h5>
-            <p></p>
-          </span>
-          <span class="dboard--span-occupants">
-            <h5>Hotel Occupancy</h5>
-            <p></p>
-          </span>
-          <span class="dboard--span-bookings">
-            <h5>Hotel Bookings</h5>
-            <p></p>
-          </span>
-          <span class="dboard--span-avail">
-            <h5>Hotel Bookings</h5>
-            <p></p>
-          </span>
-        </div>
-        <div id="orders-tab" class="style-tabs">
-          Orders
-        </div>
-        <div id="rooms-tab" class="style-tabs">
-          <h3>Select Room</h3>
-          <select id="select-menu" class="dropdown">
-            <option value="1">First</option>
-            <option value="2">Second</option>
-            <option value="3">Third</option>
-            <option value="4">Fourth</option>          
-          </select>
-        </div>
-        <div id="customer-tab" class="style-tabs">
-          Customer
-        </div>
+    <div id="ui-tabs" class="ui-widget">
+      <ul id="tab-btn-container">
+        <li class="tab-selector"><a href="#dboard-tab">Home</a></li>
+        <li class="tab-selector"><a href="#orders-tab">Orders</a></li>
+        <li class="tab-selector"><a href="#rooms-tab">Rooms</a></li>
+        <li class="tab-selector"><a href="#customer-tab">Customer</a></li>
+      </ul>
+      <div id="dboard-tab" class="style-tabs">
+        <span class="">
+          <p></p>
+        </span>
+        <span class="dboard--span-day">
+          <h5>Today's Date is:</h5>
+          <p class="today-date"></p>
+        </span>
+        <span class="dboard--span-occupants">
+          <h5>Hotel Occupancy</h5>
+          <p></p>
+        </span>
+        <span class="dboard--span-bookings">
+           <h5>Hotel Bookings</h5>
+          <p></p>
+         </span>
+        <span class="dboard--span-avail">
+          <h5>Hotel Bookings</h5>
+          <p></p>
+        </span>        
       </div>
-    </main>
+      <div id="orders-tab" class="style-tabs">
+          Orders
+      </div>
+      <div id="rooms-tab" class="style-tabs">
+         <h3>Select Room</h3>
+         <select id="select-menu" class="dropdown">
+           <option value="1">First</option>
+          <option value="2">Second</option>
+          <option value="3">Third</option>
+          <option value="4">Fourth</option>          
+         </select>
+       </div>
+       <div id="customer-tab" class="style-tabs">
+          Customer
+      </div>
+    </div>
   </body>
 </html>
