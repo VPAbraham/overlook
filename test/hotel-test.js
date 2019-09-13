@@ -41,7 +41,6 @@ describe('Hotel', () => {
     hotel.instCustomers();
     expect(hotel.getCustomerByName('Christian Sporer').id).to.equal(3);
     expect(hotel.getCustomerById(9).name).to.equal('Paula Anderson');
-
   })
 
 
