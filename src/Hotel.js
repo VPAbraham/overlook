@@ -23,11 +23,11 @@ class Hotel {
   }
 
   
-  getCustomerName(name) {
-    return this.instCustomers.find(customer => customer.name === name);
+  getCustomerByName(name) {
+    return this.customers.find(customer => customer.name === name);
   }
   
-  getCustomerId(id) {
+  getCustomerById(id) {
     return this.customers.find(customer => customer.id === id);
   }
   
@@ -67,6 +67,7 @@ class Hotel {
 
 
   hotelPrepHandler() {
+    instCustomers(); 
   }
 
 }
