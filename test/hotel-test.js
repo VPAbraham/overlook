@@ -6,7 +6,7 @@ import data from '../src/data.js';
 describe('Hotel', () => {
   let hotel;
   beforeEach(() => {
-    hotel = new Hotel(data[0], data[1], data[2], data[3])
+    hotel = new Hotel(data.users, data.rooms, data.bookings, data.roomServices)
   });
 
   it('should be a function', () => {
@@ -14,12 +14,11 @@ describe('Hotel', () => {
   });
 
   it('should be able to store data from datasets', () => {
-    console.log(hotel);
-    expect(data.length).to.equal(4);
-    expect(hotel.users).to.be.an('object');
-    expect(hotel.rooms).to.be.an('object');
-    expect(hotel.bookings).to.be.an('object');
-    expect(hotel.roomService).to.be.an('object');
+    expect(data).to.be.an('object');
+    expect(hotel.users).to.be.an('array');
+    expect(hotel.rooms).to.be.an('array');
+    expect(hotel.bookings).to.be.an('array');
+    expect(hotel.roomServices).to.be.an('array');
   });
 
   it('should be able to set the current day', () => {
@@ -27,9 +26,16 @@ describe('Hotel', () => {
     expect(hotel.currentDay).to.deep.equal('2019/09/12');
   });
 
-  it('should be able to get', () => {
-    expect().to.equal();
+  it('should be able to retrieve customer booking, room, and room service data', () => {
+    expect(hotel.getCustomerBookings(18).shift().date).to.equal('2019/09/26');
+    expect(hotel.getCustomerRoomServices(85).shift().food).to.equal('Incredible Cotton Sandwich');
+    expect(hotel.getCustomerRooms(100).shift().costPerNight).to.equal(327.76);
   });
+
+  it('should be able to instantiate customers using given data', () => {
+    hotel.instCustomers();
+    expect(hotel.customers.length).to.equal(20);
+  })
 
 
 });
