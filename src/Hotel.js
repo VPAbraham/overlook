@@ -38,14 +38,32 @@ class Hotel {
     });
   }
   
-  retCustomerName(name) {
+  getCustomerName(name) {
     return this.instCustomers.find(customer => customer.name === name);
+  }
+
+  getCustomerId(id) {
+    return this.customers.find(customer => customer.id === id);
   }
 
   getCustomerBookings(id) {
     return this.bookings.filter(booking => 
       id === booking.userID)
   }
+
+  getCustomerRoomService(id) {
+    return this.bookings.filter(booking =>
+      id === roomService.userID)
+  }
+
+  getCustomerRooms(id) {
+    let custBookings = this.getCustomerBookings(id);
+    return this.rooms.filter(room => {
+      let rmNums = custBookings.map(booking => booking.roomNumber);
+      return rmNums.includes(room.number)
+    })
+  }
+
 
 
 
