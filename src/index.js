@@ -12,19 +12,17 @@ import DOMupdates from './DOMupdates';
 let hotel;
 Promise.all([
   fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users")
-    .then(response => response.json()),
+    .then(resp => resp.json()),
 
   fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms")
-    .then(response => response.json()),
+    .then(resp => resp.json()),
 
   fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings")
-    .then(response => response.json()), 
+    .then(resp => resp.json()), 
 
   fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices")
-    .then(response => response.json()),
-]).then(data => hotel = new Hotel(data[0], data[1], data[2], data[3]));
-setTimeout(() => console.log(hotel), 100);
-//! .then(data => hotel.init)
+    .then(resp => resp.json()),
+]).then(data => hotel = new Hotel(data[0], data[1], data[2], data[3])).then(() => console.log(hotel)).then(() => console.log(hotel.customers))
 // <--  -->
 
 

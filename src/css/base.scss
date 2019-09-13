@@ -12,7 +12,6 @@ $body-font: 'Alegreya', serif;
 }
 
 body {
-  
 }
 
 a { 
@@ -127,7 +126,9 @@ header {
 
       div {
         background-color: rgb(252, 250, 250);
-        height: 60vh;
+        height: 50vh;
+        font-family: $subheader-font;
+        color: black;
       }
 
     }
