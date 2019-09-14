@@ -1,17 +1,16 @@
 import $ from 'jquery';
-import 'jquery-ui-bundle';
-import './css/base.scss';
-import Hotel from '../src/Hotel.js';
-import Bookings from '../src/Bookings.js';
-import Customer from '../src/Customer.js';
+// import 'jquery-ui-bundle';
+// import './css/base.scss';
+// import Hotel from '../src/Hotel.js';
+// import Bookings from '../src/Bookings.js';
+// import Customer from '../src/Customer.js';
 
 const domUpdates = {
 
-  // displayDate() {},
-  
-  // displayDate(date) {
-  //   $('.date-display').text(date)
-  // }
+  displayDate(date) {
+    $('.date-display').text(date)
+  }
+
 
 
 }

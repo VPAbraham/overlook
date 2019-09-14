@@ -1,5 +1,6 @@
-import Customer from './Customer';
-import Bookings from './Bookings'
+import Customer from './Customer.js';
+import Bookings from './Bookings.js'
+import domUpdates from './domUpdates.js';
 
 class Hotel {
   constructor(userData, roomData, bookingData, roomServiceData) {
@@ -74,13 +75,20 @@ class Hotel {
     }, [])
   }
 
+  appendBasicInfo() {
+    domUpdates.displayDate(this.date)
+  }
+
 
   hotelPrepHandler() {
     this.getCurrDay();
     this.createMenu()
     this.instCustomers();
-    this.instBookings(); 
+    this.instBookings();
+    this.appendBasicInfo(); 
   }
+
+
 
 }
 
