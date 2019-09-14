@@ -8,7 +8,7 @@ import $ from 'jquery';
 const domUpdates = {
 
   displayDate(date) {
-    $('.date-display').text(date)
+    $('.date-display').text(date);
   }
 
 

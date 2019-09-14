@@ -19,6 +19,7 @@ describe('Hotel', () => {
     expect(hotel.rooms).to.be.an('array');
     expect(hotel.bookings).to.be.an('array');
     expect(hotel.roomServices).to.be.an('array');
+    expect(hotel.customers).to.be.an('array');
   });
 
   it('should be able to set the current day', () => {
@@ -46,7 +47,7 @@ describe('Hotel', () => {
   })
 
   it('should be able to make a menu with the given room service data', () => {
-    expect(hotel.createMenu()).to.deep.equal(1);
+    expect(hotel.menu.length).to.equal(53);
   })
 
 });

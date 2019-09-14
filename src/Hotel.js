@@ -76,16 +76,15 @@ class Hotel {
   }
 
   appendBasicInfo() {
-    domUpdates.displayDate(this.date)
+    domUpdates.displayDate(this.currentDay)
   }
-
 
   hotelPrepHandler() {
     this.getCurrDay();
     this.createMenu()
     this.instCustomers();
     this.instBookings();
-    this.appendBasicInfo(); 
+    // this.appendBasicInfo(); 
   }
 
 
