@@ -7,11 +7,13 @@ import Customer from '../src/Customer.js';
 
 const domUpdates = {
 
-  displayDate() {},
+  // displayDate() {},
   
-  displayDate(date) {
-    $('.date-display').text(date)
-  }
+  // displayDate(date) {
+  //   $('.date-display').text(date)
+  // }
+
+
 }
 
 export default domUpdates;

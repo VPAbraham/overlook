@@ -6,7 +6,7 @@ import data from '../src/data.js';
 describe('Hotel', () => {
   let hotel;
   beforeEach(() => {
-    hotel = new Hotel(data.users, data.rooms, data.bookings, data.roomServices)
+    hotel = new Hotel(data, data, data, data)
   });
 
   it('should be a function', () => {
