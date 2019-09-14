@@ -1,6 +1,10 @@
 $header-font: 'Lora', serif;
 $subheader-font: 'Istok Web', sans-serif;
 $body-font: 'Alegreya', serif;
+$tan: #afaba8;
+$blue: #030e24;
+$kreme: #ed8a63;
+$brown: #c4af93;
 
 
 
@@ -19,7 +23,7 @@ a {
 }
 
 header {
-  background-color: white;
+  background-color: $tan;
   position: relative;
   display: flex;
   width: 100%;
@@ -41,34 +45,34 @@ header {
 
   }
 
-  .header--search {
-    font-family: $subheader-font;
-    display: inline-flex;
-    height: 2em;
-    margin-top: 20px;
+  // .header--search {
+  //   font-family: $subheader-font;
+  //   display: inline-flex;
+  //   height: 2em;
+  //   margin-top: 20px;
 
-    h3 {
-      height: 100%;
-      font-weight: 600;
-      font-size: 20px;
-    }
+  //   h3 {
+  //     height: 100%;
+  //     font-weight: 600;
+  //     font-size: 20px;
+  //   }
 
-    input {
-      font-family: $subheader-font;
-      border-radius: 8px;
-      font-size: 12px;
-      margin-left: 4px;
-      width: 22vw;
-      border: 1px solid black;
-    }
-  }
+  //   input {
+  //     font-family: $subheader-font;
+  //     border-radius: 8px;
+  //     font-size: 12px;
+  //     margin-left: 4px;
+  //     width: 22vw;
+  //     border: 1px solid black;
+  //   }
+  // }
 }
 
 #ui-tabs {
   width: 100%;
-  background: white;
   height: 100vh;
   display: flex;
+  background-color: $blue;
   flex-direction: column;
 
 
@@ -77,27 +81,64 @@ header {
     list-style: none;
     width: 100%;
     font-family: $subheader-font;
-    padding-left: 15%;
     align-items: center;
-    justify-content: space-around;
-
+    padding: 0;
 
 
     li {
       text-align: center;
       font-size: 1.2em;
       font-weight: 700;
-      border-radius: 2px;
-      width: 300px;
-      transition: all .2s ease-in-out, background .3s; 
+      color: white;
+      background: $blue;
+      justify-content: space-evenly;
+      width: 13%;
+      transition: all .2s ease-in-out, box-shadow .3s; 
       text-decoration: none;
     }
     
     li:hover {
       // transform: scale(1.1);
-      background:rgba(190, 100, 73, 0.2);
-      box-shadow: 0 0 11px rgba(33,33,33,.2); 
+      background:rgb(94, 128, 201);
+      box-shadow: 0 2px 1px #777; 
     }
+
+    .search-input {
+      margin-left: 38.5vw;
+      background: slategray;
+      color: rgb(240, 226, 226);
+      border-radius: 12px;
+      width: 30vw;
+      height: 75%;
+      border: 1px solid rgb(143, 143, 141);
+      padding: 0 12px;
+    }
+
+    ::placeholder {
+      color: white;
+    }
+
+    .ui-tabs-active {
+      background-color: rgb(185, 139, 86);
+    }
+
+    a {
+      display: block;
+    }
+
+    a:link {
+      color: white;
+    }
+
+    a:hover {
+      
+    }
+    a:active {
+      color: white;
+    } 
+    a:visited {
+      color: white;
+    } 
 
   }
 
@@ -117,12 +158,29 @@ header {
 
       h3 {
         height: 5vh;
-        background-color: #b9b3b3;
+        background-color: $brown;
         font-family: $body-font;
         font-size: 1.3em;
         border-bottom: 2.5px solid rgb(197, 197, 197);
         border-radius: 2px 0;
       }
+
+      a {
+        float: left;
+      }
+      a:link {
+      color: white;
+      }
+
+      a:hover {
+        color: #ed8a63;
+      }
+      a:active {
+      color: white;
+      } 
+      a:visited {
+      color: white;
+      }  
 
       div {
         background-color: rgb(252, 250, 250);
