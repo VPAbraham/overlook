@@ -1,6 +1,5 @@
 import Customer from './Customer';
 import Bookings from './Bookings'
-import domUpdates from './domUpdates.js'
 
 class Hotel {
   constructor(userData, roomData, bookingData, roomServiceData) {
@@ -8,11 +7,11 @@ class Hotel {
     this.users = userData.users;
     this.rooms = roomData.rooms;
     this.bookings = bookingData.bookings;
+    this.menu;
     this.roomServices = roomServiceData.roomServices;
     this.customers = [];
-    this.instCustomers();
-    this.instBookings();
-    // this.domUpdates.displayDate(this.currentDay);
+    this.bookingDb;
+    this.hotelPrepHandler()
   }
   
 
@@ -58,22 +57,29 @@ class Hotel {
       let bookings = this.getCustomerBookings(cust.id);
       let roomServices = this.getCustomerRoomServices(cust.id);
       let rooms = this.getCustomerRooms(cust.id);
-      let menu = this.menu;
-      let customer = new Customer(cust.id, cust.name, bookings, roomServices, rooms, menu, this.currentDay);
+      let customer = new Customer(cust.id, cust.name, bookings, roomServices, rooms, this.menu, this.currentDay);
       this.customers.push(customer);
     });
   }
 
   instBookings() {
-    this.bookings = new Bookings(this.customers, this.bookings, this.roomServices, this.rooms, this.currentDay)
-  };
-
-
-
+    this.bookingDb = new Bookings(this.customers, this.bookings, this.roomServices, this.rooms, this.currentDay)
+  }
+  createMenu() {
+    this.menu = this.roomServices.reduce((foodSelection, order) => {
+      if (!foodSelection.includes(order.food)) {
+        foodSelection.push({food: order.food, totalCost: order.totalCost})    
+      }
+      return foodSelection
+    }, [])
+  }
 
 
   hotelPrepHandler() {
-    instCustomers(); 
+    this.getCurrDay();
+    this.createMenu()
+    this.instCustomers();
+    this.instBookings(); 
   }
 
 }

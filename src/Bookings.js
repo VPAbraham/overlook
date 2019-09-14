@@ -6,6 +6,8 @@ class Bookings {
     this.rooms = rooms;
     this.currentDay = currentDay;
   }
+
+  
 }
 
 

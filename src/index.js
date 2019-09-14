@@ -22,16 +22,18 @@ Promise.all([
 
   fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices")
     .then(resp => resp.json()),
-]).then(data => hotel = new Hotel(data[0], data[1], data[2], data[3])).then(data => console.log(hotel.customers)).then(() => console.log(hotel.bookings))
+]).then(data => hotel = new Hotel(data[0], data[1], data[2], data[3])).then(data => console.log(hotel))
+.then(data => console.log(hotel.currentDay))
+.then(() => console.log(hotel.menu));
 // <--  -->
 
 
 $(document).ready(() => {
-  $('#ui-tabs').tabs();
+  $('#ui-tabs').tabs( {active: 0});
   $('#dboard-accordion').accordion();
-  $('header').click(() => {
-    $('header').toggle('puff')
-  });
+  // $('header').click(() => {
+  //   $('header').toggle('puff')
+  // });
   // let date = '12/1/2019'
   // $('.date-today').text(`Hello, today is ${hotel.getCurrDay()}`)
   
