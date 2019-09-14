@@ -22,7 +22,7 @@ Promise.all([
 
   fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices")
     .then(resp => resp.json()),
-]).then(data => hotel = new Hotel(data[0], data[1], data[2], data[3])).then(() => console.log(hotel)).then(() => console.log(hotel.customers))
+]).then(data => hotel = new Hotel(data[0], data[1], data[2], data[3])).then(data => console.log(hotel.customers)).then(() => console.log(hotel.bookings))
 // <--  -->
 
 

@@ -1,5 +1,6 @@
-import Customer from "./Customer";
-import domUpdates from "./domUpdates.js"
+import Customer from './Customer';
+import Bookings from './Bookings'
+import domUpdates from './domUpdates.js'
 
 class Hotel {
   constructor(userData, roomData, bookingData, roomServiceData) {
@@ -10,7 +11,8 @@ class Hotel {
     this.roomServices = roomServiceData.roomServices;
     this.customers = [];
     this.instCustomers();
-    this.domUpdates.displayDate(this.currentDay);
+    this.instBookings();
+    // this.domUpdates.displayDate(this.currentDay);
   }
   
 
@@ -62,7 +64,9 @@ class Hotel {
     });
   }
 
-
+  instBookings() {
+    this.bookings = new Bookings(this.customers, this.bookings, this.roomServices, this.rooms, this.currentDay)
+  };
 
 
 
