@@ -5,7 +5,7 @@ import './css/base.scss';
 import Hotel from '../src/Hotel.js';
 import Bookings from '../src/Bookings.js';
 import Customer from '../src/Customer.js';
-import DOMupdates from './DOMupdates';
+import domUpdates from './domUpdates';
 
 // <-- FETCH -->
 

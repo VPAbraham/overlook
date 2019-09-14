@@ -7,24 +7,23 @@
     <title>Overlook</title>
   </head>
   <body>
-    <header>
-      <span>  
-        <h1>Overlook</h1>
-        <h4>the leader in hotel booking services</h4>
-      </span>
-      <p>Today is <span class="date-display"></span></p>
-      <div class = "header--search">
-        <h3>Search Customers</h3>
-        <input class="search-input" placeholder="Customer Name">
-      </div>
-    </header>
+    <div class="subheader">
+    </div>
     <div id="ui-tabs" class="ui-widget">
       <ul id="tab-btn-container">
         <li class="tab-selector"><a href="#dboard-tab">Home</a></li>
         <li class="tab-selector"><a href="#orders-tab">Orders</a></li>
         <li class="tab-selector"><a href="#rooms-tab">Rooms</a></li>
-        <li class="tab-selector"><a href="#customer-tab">Customer</a></li>
+        <li class="tab-selector"><a href="#customer-tab">Customers</a></li>
+        <input class="search-input" placeholder="enter customer name or ID number">
       </ul>
+      <header>
+                    <span>  
+                      <h1>Overlook</h1>
+                      <h4>the leader in hotel booking services</h4>
+                    </span>
+                    <p>Today is <span class="date-display"></span></p>
+                  </header>
       <div id="dboard-tab" class="style-tabs">
         
         <div id="dboard-accordion"> Overview
@@ -35,7 +34,7 @@
             <p>Room service charges today total <span class="room-serv-charges">$X</span>.</p>
             
           </div>
-          <h3><a href="#">Room Reservations</a></h3>          
+          <h3><a href="#">Rooms Reserved</a></h3>          
           <div class="res-info">
             <table>
               <tr>
@@ -54,7 +53,7 @@
               </tr>
             </table>
           </div>
-            <h3><a href="#">Third</a></h3>
+            <h3><a href="#">Vacant Rooms</a></h3>
           <div class="room-info">
             <p>How are youtoday</p>
           </div>

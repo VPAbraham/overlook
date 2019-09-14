@@ -25,7 +25,7 @@ describe('Hotel', () => {
     hotel.getCurrDay();
     expect(hotel.currentDay).to.deep.equal('2019/09/12');
   });
-
+  
   it('should be able to retrieve customer booking, room, and room service data', () => {
     expect(hotel.getCustomerBookings(18).shift().date).to.equal('2019/09/26');
     expect(hotel.getCustomerRoomServices(85).shift().food).to.equal('Incredible Cotton Sandwich');
