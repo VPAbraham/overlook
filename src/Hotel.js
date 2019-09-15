@@ -28,7 +28,8 @@ class Hotel {
 
   
   getCustomerByName(name) {
-    return this.customers.find(customer => customer.name === name);
+    name = name.toLowerCase()
+    return this.customers.find(customer => customer.name.toLowerCase() === name);
   }
   
   getCustomerById(id) {

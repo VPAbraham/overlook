@@ -53,7 +53,7 @@ $(document).ready(() => {
     console.log(hotel.bookingDb.getBookingRevToday())
     console.log(hotel.bookingDb.getCurrentlyAvailable())
     console.log(hotel.bookingDb.getCurrentlyBooked())
-    console.log(hotel.bookingDb.getPercentRoomsAvailable());
+    console.log(hotel.customers);
     domUpdates.displayDate(hotel.currentDay)
     domUpdates.displayReservedRooms(hotel.bookingDb.getCurrentlyBooked())
     domUpdates.displayAvailableRooms(hotel.bookingDb.getCurrentlyAvailable())
@@ -66,6 +66,11 @@ $(document).ready(() => {
     $('.modal-start').hide();
     $('.modal-backdrop').hide();
   }) 
+
+  $('.cust-search-button').on('click', () => {
+    let searchInput = $('.cust-search-input').val();
+    console.log(hotel.getCustomerByName(searchInput))
+  })
 
 });
 

@@ -283,6 +283,8 @@ a {
       height: 2.8em;
       border-radius: 5px;
       font-family: $body-font;
+      display: block;
+      margin: auto;
     }
 
     section {
@@ -318,6 +320,26 @@ a {
     
     .customer-search {
 
+      .cust-search-button {
+        width: 55%;
+        margin: 12px;
+      }
+
+      .cust-search-clear {
+
+      }
+
+      .customer-search-display {
+              height: 50vh;
+              margin: auto;
+              width: 85%;
+              border-radius: 5px;
+              background: $neutral;
+              display: block;
+              border: solid 1px black;
+            }
+      
+
 
     }
     .customer-info{
@@ -334,6 +356,7 @@ a {
   }
 
 }
+
 
 h5 {
   font-family: $body-font;

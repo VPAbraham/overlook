@@ -35,6 +35,21 @@ const domUpdates = {
 
   displayTotalBookingRev(rev) {
     $('.daily-book-rev').text(`Today, the hotel has made $${rev} in booking revenue.`)
+  },
+
+  displayTotalRoomServiceRev(rev) {
+    $('.daily-service-rev').text(`Today, the hotel has made $${rev} in room service revenue.`)
+  },
+
+  displaySearchedCustomer(input) {
+    if (typeof input === 'number') {
+      console.log('num')
+    }
+
+    if (typeof input === 'string') {
+      console.log('str')
+    }
+
   }
 
 
