@@ -7,6 +7,9 @@
     <title>Overlook</title>
   </head>
   <body>
+
+<!-- MODAL POPUP -->
+
     <div class="modal-start">
       <button class="start-hotel-button">Go to Your Hotel</button>
     </div>
@@ -15,22 +18,28 @@
     </div>
     <div class="subheader">
     </div>
+
+<!-- MODAL POPUP END -->
+
+<!-- UI-TABS -->
+
     <div id="ui-tabs" class="ui-widget">
       <ul id="tab-btn-container">
         <li class="tab-selector"><a href="#dboard-tab">Home</a></li>
         <li class="tab-selector"><a href="#customer-tab">Customers</a></li>
         <li class="tab-selector"><a href="#rooms-tab">Rooms</a></li>
         <li class="tab-selector"><a href="#orders-tab">Orders</a></li>
-        <input class="search-input" placeholder="enter customer name or ID number">
       </ul>
-      <header>
+      <header class="page-header">
         <span>  
           <h1>Overlook</h1>
           <h4>the leader in hotel booking services</h4>
         </span>
       </header>
+
+<!-- DASHBOARD TAB -->
+
       <div id="dboard-tab" class="style-tabs">
-        
         <div id="dboard-accordion"> Overview
           <h3><a href="#">General Information</a></h3>
           <div class="gen-info">
@@ -49,69 +58,41 @@
               <h6>Rooms currently reserved:</h6>
               <span class='res-rooms'></span>
             </div>
-            <!-- <p>There are <span class="rooms-avail">X</span> rooms available.</p>
-            <p><span class="booking-rev">X</span> has been earned from room bookings today.</p>
-            <p>Room service charges today total <span class="room-serv-charges">$X</span>.</p>
-             -->
-          </div>
-          <!-- <h3><a href="#">Rooms Reserved</a></h3>          
-          <div class="res-info">
-            <table>
-              <tr>
-                <th>Room Number</th>
-                <th>Booked On</th>
-              </tr>
-              <tr>
-                <td>Room 1</td>
-                <td>Room 2</td>
-                <td>Room 3</td>
-              </tr>
-              <tr>
-                <td>2019/06/03</td>
-                <td>2019/06/02</td>
-                <td>2019/06/04</td>
-              </tr>
-            </table>
-          </div>
-            <h3><a href="#">Vacant Rooms</a></h3>
-          <div class="room-info">
-            <p>How are youtoday</p>
-          </div>
+           </div>
         </div>
-        <span class="">
-          <p></p>
-        </span> -->
-        <!-- <span class="dboard--span-day">
-          <h5>Today's Date is:</h5>
-          <p class="date-today"></p>
-        </span>
-        <span class="dboard--span-occupants">
-          <h5>Hotel Occupancy</h5>
-          <p></p>
-        </span>
-        <span class="dboard--span-bookings">
-           <h5>Hotel Bookings</h5>
-          <p></p>
-         </span>
-        <span class="dboard--span-avail">
-          <h5>Hotel Bookings</h5>
-          <p></p>
-        </span>         -->
       </div>
-      <div id="orders-tab" class="style-tabs">
-          Orders
+  
+<!-- CUSTOMER TAB -->
+
+      <div id="customer-tab" class="style-tabs">
+        <header>Customer Info</header>
+        <section>
+          <div class="customer-search">
+            <p class="cust-search-header cust-blurb">Customer search:</p>
+            <input class="cust-search-input cust-input" placeholder="enter customer name or ID number">
+          </div>
+          <div class="customer-info">
+            <p class="cust-add-header cust-blurb">Add a customer:</p>
+            <input class="cust-add-input cust-input" placeholder="enter new customer name">
+          </div>
+        </section>
       </div>
+
+<!-- ROOMS TAB -->
+
       <div id="rooms-tab" class="style-tabs">
-         <h3>Select Room</h3>
-         <select id="select-menu" class="dropdown">
-           <option value="1">First</option>
+        <h3>Select Room</h3>
+        <select id="select-menu" class="dropdown">
+          <option value="1">First</option>
           <option value="2">Second</option>
           <option value="3">Third</option>
           <option value="4">Fourth</option>          
-         </select>
-       </div>
-       <div id="customer-tab" class="style-tabs">
-          Customer
+        </select>
+      </div>
+      
+<!-- ORDERS TAB -->
+
+      <div id="orders-tab" class="style-tabs">
       </div>
     </div>
   </body>
