@@ -9,6 +9,14 @@ const domUpdates = {
 
   displayDate(date) {
     $('.date-display').text(date);
+  },
+
+  displayReservedRooms(bookings) {
+    let reservedRooms = '';
+    bookings.forEach(booking => {
+      reservedRooms += `<p>${booking.roomNumber}</p>`
+    });
+    $('.res-rooms').html(reservedRooms)
   }
 
 

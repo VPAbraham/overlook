@@ -77,6 +77,7 @@ class Hotel {
 
   appendBasicInfo() {
     domUpdates.displayDate(this.currentDay)
+    domUpdates.displayReservedRooms(this.bookingDb.getCurrentlyBooked())
   }
 
   hotelPrepHandler() {

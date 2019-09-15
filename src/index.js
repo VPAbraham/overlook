@@ -23,7 +23,7 @@ Promise.all([
   fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices")
     .then(resp => resp.json()),
 ]).then(data => hotel = new Hotel(data[0], data[1], data[2], data[3]))
-  // .then(() => domUpdates.displayDate(hotel.currentDay))
+  .then(() => domUpdates.displayDate(hotel.bookings))
   .catch(error => console.log(`Promise error: ${error}`))
 // .then(data => console.log(hotel.currentDay))
 // .then(() => console.log(hotel.menu));
@@ -49,15 +49,18 @@ $(document).ready(() => {
     } 
   }
 
-  function logHotel() {
+  function openHotel() {
     domUpdates.displayDate(hotel.currentDay)
+    console.log(hotel.bookingDb.getCurrentlyBooked())
+    domUpdates.displayReservedRooms(hotel.bookingDb.getCurrentlyBooked())
     console.log(hotel)
   }
 
   
-  $('h3').on('click', () => {
-    domUpdates.displayDate(hotel.currentDate)
-    logHotel()
+  $('.start-hotel-button').on('click', () => {
+    openHotel()
+    $('.modal-start').hide();
+    $('.modal-backdrop').hide();
   }) 
 
 });
