@@ -24,48 +24,33 @@
         <input class="search-input" placeholder="enter customer name or ID number">
       </ul>
       <header>
-                    <span>  
-                      <h1>Overlook</h1>
-                      <h4>the leader in hotel booking services</h4>
-                    </span>
-                    <p>Today is <span class="date-display"></span></p>
-                  </header>
+        <span>  
+          <h1>Overlook</h1>
+          <h4>the leader in hotel booking services</h4>
+        </span>
+      </header>
       <div id="dboard-tab" class="style-tabs">
         
         <div id="dboard-accordion"> Overview
           <h3><a href="#">General Information</a></h3>
-          <div class="gen-info"> 
-            <div class="res-rooms"></div> 
-            <!-- <table>
-              <thead> Reservations
-                <tr>
-                  <th>Room Number</th>
-                  <th>Date Booked</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Room x</td>
-                  <td>2019/01/1273</td>
-                </tr>
-                <tr>
-                  <td>Room B</td>
-                  <td>20/19/06/03</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <td>Room 3</td>
-                  <td>2019/07/01</td>
-                </tr>
-              </tfoot>
-            </table> -->
-            <p>There are <span class="rooms-avail">X</span> rooms available.</p>
+          <div class="gen-info">
+            <div class ="gen-info-stats info-block">
+              <p class="date">Today is <span class="date-display"></span></p>
+            </div> 
+            <div class="curr-reserved">
+              <h6>Rooms currently available:</h6>
+              <span class= 'av-rooms'></span>
+            </div>
+            <div class="curr-reserved">
+              <h6>Rooms currently reserved:</h6>
+              <span class='res-rooms'></span>
+            </div>
+            <!-- <p>There are <span class="rooms-avail">X</span> rooms available.</p>
             <p><span class="booking-rev">X</span> has been earned from room bookings today.</p>
             <p>Room service charges today total <span class="room-serv-charges">$X</span>.</p>
-            
+             -->
           </div>
-          <h3><a href="#">Rooms Reserved</a></h3>          
+          <!-- <h3><a href="#">Rooms Reserved</a></h3>          
           <div class="res-info">
             <table>
               <tr>
@@ -91,7 +76,7 @@
         </div>
         <span class="">
           <p></p>
-        </span>
+        </span> -->
         <!-- <span class="dboard--span-day">
           <h5>Today's Date is:</h5>
           <p class="date-today"></p>

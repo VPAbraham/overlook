@@ -135,6 +135,8 @@ header {
       padding: 0 12px;
     }
 
+    
+
     ::placeholder {
       color: white;
     }
@@ -201,7 +203,52 @@ header {
       } 
       a:visited {
       color: white;
-      }  
+      }
+
+      .gen-info-stats {
+        display: inline-block;
+        float: left;
+        background: white;
+        width: 25%;
+        margin: .5em;
+        border: 1px solid black;
+        height: 90%;
+      }
+      
+      .curr-reserved {
+        margin: .5em;
+        height: 90%;
+        width: 20%;
+        overflow-y: scroll;
+        background: white;
+        border: solid 1px grey;
+        border-radius: 3px;
+        display: inline-block;
+        float: left;
+        max-width: 200px;
+        min-width: 160px;
+      }
+
+      h6{
+        font-size: 1em;
+        text-align: left;
+        background: grey;
+        border: 2px solid black;
+        border-radius: 2px;
+      }
+
+      .res-rooms,
+      .av-rooms {
+        text-align: left;
+        font-size: 1.3em;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .table-items {
+        border-bottom: 1px dotted lightgrey;
+        margin-left: 10px;
+      }
 
       div {
         background-color: rgb(252, 250, 250);

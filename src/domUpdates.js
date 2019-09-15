@@ -8,15 +8,24 @@ import $ from 'jquery';
 const domUpdates = {
 
   displayDate(date) {
+
     $('.date-display').text(date);
   },
 
   displayReservedRooms(bookings) {
     let reservedRooms = '';
     bookings.forEach(booking => {
-      reservedRooms += `<p>${booking.roomNumber}</p>`
+      reservedRooms += `<td class="table-items">Room ${booking.roomNumber}</td>`
     });
     $('.res-rooms').html(reservedRooms)
+  },
+
+  displayAvailableRooms(rooms) {
+    let vacantRooms = '';
+    rooms.forEach(room => {
+      vacantRooms += `<td class="table-items">Room ${room.number}</td>`    
+    });
+    $('.av-rooms').html(vacantRooms);
   }
 
 
