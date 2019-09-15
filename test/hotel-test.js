@@ -19,11 +19,12 @@ describe('Hotel', () => {
     expect(hotel.rooms).to.be.an('array');
     expect(hotel.bookings).to.be.an('array');
     expect(hotel.roomServices).to.be.an('array');
+    expect(hotel.customers).to.be.an('array');
   });
 
   it('should be able to set the current day', () => {
     hotel.getCurrDay();
-    expect(hotel.currentDay).to.deep.equal('2019/09/12');
+    expect(hotel.currentDay).to.deep.equal('2019/09/14');
   });
   
   it('should be able to retrieve customer booking, room, and room service data', () => {
@@ -33,15 +34,20 @@ describe('Hotel', () => {
   });
 
   it('should be able to instantiate customers using given data', () => {
-    hotel.instCustomers();
     expect(hotel.customers.length).to.equal(20);
   })
 
   it('should be able search for customers with their user data', () => {
-    hotel.instCustomers();
     expect(hotel.getCustomerByName('Christian Sporer').id).to.equal(3);
     expect(hotel.getCustomerById(9).name).to.equal('Paula Anderson');
   })
 
+  it('should be able to instantiate bookings using given data', () => {
+    expect(hotel.bookingDb).to.be.an('object');
+  })
+
+  it('should be able to make a menu with the given room service data', () => {
+    expect(hotel.menu.length).to.equal(53);
+  })
 
 });
