@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Hotel from './Hotel';
 // import 'jquery-ui-bundle';
 // import './css/base.scss';
 // import Hotel from '../src/Hotel.js';
@@ -26,7 +27,11 @@ const domUpdates = {
       vacantRooms += `<td class="table-items">Room ${room.number}</td>`    
     });
     $('.av-rooms').html(vacantRooms);
-  }
+  },
+
+  displayPercentRoomsAvailable(num) {
+    $('.percent-rooms-av').text(`${num}% of rooms are still available`)
+  },
 
 
 
