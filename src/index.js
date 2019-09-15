@@ -50,7 +50,7 @@ $(document).ready(() => {
 
   function openHotel() {
     console.log(hotel)
-    console.log(hotel.bookingDb.getBookingRevToday())
+    console.log(hotel.getRoomServiceRevToday())
     console.log(hotel.bookingDb.getCurrentlyAvailable())
     console.log(hotel.bookingDb.getCurrentlyBooked())
     console.log(hotel.bookingDb.getPercentRoomsAvailable());
@@ -59,6 +59,7 @@ $(document).ready(() => {
     domUpdates.displayAvailableRooms(hotel.bookingDb.getCurrentlyAvailable())
     domUpdates.displayPercentRoomsAvailable(hotel.bookingDb.getPercentRoomsAvailable())
     domUpdates.displayTotalBookingRev(hotel.bookingDb.getBookingRevToday())
+    domUpdates.displayTotalRoomServiceRev(hotel.getRoomServiceRevToday())
   }
 
   $('.start-hotel-button').on('click', () => {

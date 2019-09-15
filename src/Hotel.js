@@ -75,6 +75,16 @@ class Hotel {
     }, [])
   }
 
+  getRoomServiceRevToday() {
+    let todayService = this.roomServices.filter(service => {
+      return service.date === this.currentDay
+    });
+    return todayService.reduce((totalRev, service) => {
+      totalRev += service.totalCost
+      return totalRev
+    }, 0)
+  }
+
   appendBasicInfo() {
     domUpdates.displayDate(this.currentDay)
     domUpdates.displayReservedRooms(this.bookingDb.getCurrentlyBooked())
