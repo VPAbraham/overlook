@@ -92,8 +92,8 @@ header {
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: $blue;
   flex-direction: column;
+  background: #e2e2ff;
 
 
   #tab-btn-container {
@@ -103,6 +103,7 @@ header {
     font-family: $subheader-font;
     align-items: center;
     padding: 0;
+    background-color: #030e24;
 
 
     li {
@@ -113,9 +114,10 @@ header {
       background: $blue;
       border-radius: 3px;
       justify-content: space-evenly;
-      width: 13%;
+      width: 25%;
       transition: all .2s ease-in-out, box-shadow .3s; 
       text-decoration: none;
+      border-left: 3px solid rgb(30, 31, 85);
     }
     
     li:hover {
@@ -261,17 +263,6 @@ header {
 
   }
 
-  #orders-tab {
-    background: rgb(196, 189, 189);
-  }
-
-  #rooms-tab {
-    background: green;
-  }
-
-  #customer-tab {
-    background: rgb(117, 43, 96);
-  }
   .style-tabs {
     color: #787878;
     background-position: center 3px;
@@ -281,6 +272,24 @@ header {
     text-align: center;
     width: 100%;
     height: 100%;
+  }
+  
+  #customer-tab {
+
+    .customer-search {
+      width: 80%;
+      height: 80%;
+      background: white;
+    }
+
+  #rooms-tab {
+    background: green;
+  }
+
+  #orders-tab {
+    background: rgb(196, 189, 189);
+  }
+
   }
 
 }
