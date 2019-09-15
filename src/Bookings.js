@@ -6,13 +6,15 @@ class Bookings {
     this.rooms = rooms;
     this.currentDay = currentDay;
     this.vacantRooms;
+    this.reservedRooms;
   }
 
   getCurrentlyBooked() {
     let allBooks = this.bookings.filter(booking => {
       return booking.date === this.currentDay
     });
-    return allBooks.sort((a, b) => a.roomNumber - b.roomNumber)
+    this.reservedRooms = allBooks.sort((a, b) => a.roomNumber - b.roomNumber)
+    return this.reservedRooms
   }
 
   getCurrentlyAvailable() {
@@ -24,8 +26,21 @@ class Bookings {
     return this.vacantRooms;
   }
 
-  appendBookingInfo() {
+  getPercentRoomsAvailable() {
+    return (50 - this.reservedRooms.length) * 2
+  }
 
+  getBookingRevToday() {
+    let roomNumsBooked = this.getCurrentlyBooked().map(room => room.roomNumber)
+    let filteredRooms = this.rooms.filter(room => {
+      if (roomNumsBooked.includes(room.number)) {
+        return room
+      }
+    }).reduce((totalRev, room) => {
+      totalRev += room.costPerNight
+      return totalRev
+    }, 0)
+    return filteredRooms.toFixed(2);
   }
 }
 
