@@ -1,10 +1,14 @@
 $header-font: 'Lora', serif;
 $subheader-font: 'Istok Web', sans-serif;
 $body-font: 'Alegreya', serif;
-$tan: #afaba8;
-$blue: #030e24;
+$tan: #d7cec7;
+$slate: rgba(54, 52, 52, 0.849);
 $kreme: #ed8a63;
 $brown: #c4af93;
+$sky: #caebf2;
+$carbon: #a9a9a9;
+$watermelon: #ff3b3f;
+$neutral: #efefef;
 
 
 
@@ -41,14 +45,15 @@ a {
   z-index: 2000;
 }
 
-header {
-  background-color: $blue;
+.page-header {
+  background-color: $tan;
   position: relative;
-  color: white;
+  color: $carbon;
+  font-weight: 700;
   display: flex;
   width: 100%;
   height: 11vh;
-  border-bottom: 2px solid rgb(192, 192, 192);
+  border-bottom: 2px solid rgb(0, 0, 0);
 
   span{
     width: 66vw;
@@ -93,7 +98,7 @@ header {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #e2e2ff;
+  background: $sky;
 
 
   #tab-btn-container {
@@ -103,7 +108,7 @@ header {
     font-family: $subheader-font;
     align-items: center;
     padding: 0;
-    background-color: #030e24;
+    background-color: $neutral;
 
 
     li {
@@ -111,7 +116,7 @@ header {
       font-size: 1.2em;
       font-weight: 700;
       color: white;
-      background: $blue;
+      background: $neutral;
       border-radius: 3px;
       justify-content: space-evenly;
       width: 25%;
@@ -126,16 +131,7 @@ header {
       box-shadow: 0 2px 1px #777; 
     }
 
-    .search-input {
-      margin-left: 38.5vw;
-      background: slategray;
-      color: rgb(240, 226, 226);
-      border-radius: 12px;
-      width: 30vw;
-      height: 75%;
-      border: 1px solid rgb(143, 143, 141);
-      padding: 0 12px;
-    }
+   
 
     
 
@@ -235,7 +231,7 @@ header {
         font-size: 1em;
         text-align: left;
         background: grey;
-        border: 2px solid black;
+        border: 2px solid $carbon;
         border-radius: 2px;
       }
 
@@ -264,7 +260,7 @@ header {
   }
 
   .style-tabs {
-    color: #787878;
+    color: $neutral;
     background-position: center 3px;
     padding-top: 40px;
     font-weight: bold;
@@ -276,10 +272,55 @@ header {
   
   #customer-tab {
 
+    .cust-blurb {
+      color: black;
+      font-size: 1.8em;
+    }
+
+    .cust-input { 
+      width: 75%;
+      font-size: 1.8em;
+      height: 2.8em;
+      border-radius: 5px;
+      font-family: $body-font;
+    }
+
+    section {
+      width: 90vw;
+      height: 74vh;
+      background: $neutral;
+      display: flex;
+      margin: auto;
+      justify-content: space-evenly;
+      border-radius: 0 0 9px 9px;
+
+    }
+    header {
+      font-size: 3em;
+      width: 90vw;
+      margin: auto;
+      color: white;
+      height: 6%;
+      font-family: $body-font;
+      background: $slate;
+      border-radius: 15px 15px 0 0;
+    }
+
+    div {
+      display: inline-block;
+      width: 45%;
+      height: 70vh;
+      background: #fcfafa;
+      border-radius: 0 0 15px 15px;
+      // margin: auto;
+      border: 2px solid rgb(141, 137, 137);
+    }
+    
     .customer-search {
-      width: 80%;
-      height: 80%;
-      background: white;
+
+
+    }
+    .customer-info{
     }
 
   #rooms-tab {
