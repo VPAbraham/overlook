@@ -30,6 +30,18 @@ class Bookings {
     return (50 - this.reservedRooms.length) * 2
   }
 
+  getBookingRevToday() {
+    let roomNumsBooked = this.getCurrentlyBooked().map(room => room.roomNumber)
+    let filteredRooms = this.rooms.filter(room => {
+      if (roomNumsBooked.includes(room.number)) {
+        return room
+      }
+    }).reduce((totalRev, room) => {
+      totalRev += room.costPerNight
+      return totalRev
+    }, 0)
+    return filteredRooms.toFixed(2);
+  }
 }
 
 

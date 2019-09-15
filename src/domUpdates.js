@@ -30,8 +30,12 @@ const domUpdates = {
   },
 
   displayPercentRoomsAvailable(num) {
-    $('.percent-rooms-av').text(`${num}% of rooms are still available`)
+    $('.percent-rooms-av').text(`${num}% of rooms are still available.`)
   },
+
+  displayTotalBookingRev(rev) {
+    $('.daily-book-rev').text(`Today, the hotel has made $${rev} in booking revenue.`)
+  }
 
 
 
