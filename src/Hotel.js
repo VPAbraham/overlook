@@ -12,6 +12,8 @@ class Hotel {
     this.roomServices = roomServiceData.roomServices;
     this.customers = [];
     this.bookingDb;
+    this.selectedCustomer;
+    this.selectedRoom;
     this.hotelPrepHandler()
   }
   
@@ -84,6 +86,13 @@ class Hotel {
       totalRev += service.totalCost
       return totalRev
     }, 0)
+  }
+
+  addCustomer(name) {
+    let customerId = this.customers.length + 1;
+    let newCustomer = new Customer(customerId, name, [], [], [], this.menu, this.currentDate);
+    this.customers.push(newCustomer);
+    return this.customers[customerId - 1]
   }
 
   hotelPrepHandler() {

@@ -9,6 +9,12 @@ class Customer {
     this.currentDate = currentDate;
   }
 
+  getCurrentBooking() {
+    return this.bookings.find(booking => booking.date === this.currentDate)
+  }
+
+  
+
 }
 
 export default Customer;

@@ -80,8 +80,21 @@ $(document).ready(() => {
   $('.customer-search-display').on('click', '.retr-name', (e) => {
     let selectedUser = $(e.target).attr('data-id')
     hotel.selectedCustomer = hotel.getCustomerByName(selectedUser);
-    console.log(hotel.selectedCustomer)
+    let currentBooking = hotel.selectedCustomer.getCurrentBooking();
+    console.log(currentBooking)
+    if (currentBooking) {
+      hotel.selectedRoom = hotel.bookingDb.getRoom(currentBooking.roomNumber)
+    }
+    $('.customer-selected-display').text(`Currently selected: ${selectedUser}`)
   });
+
+  $('.cust-add-button').on('click', () => {
+    if ($('.cust-add-input').val() !== '') {
+      let newName = $('.cust-add-input').val();
+      hotel.selectedCustomer = hotel.addCustomer(newName);
+      
+    }
+  })
 
   // })
   //? $('.cust-search-button').on('click', () => {
