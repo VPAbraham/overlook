@@ -75,7 +75,7 @@ $(document).ready(() => {
     domUpdates.displaySearch(filteredUsers)
   }
 
-  $('.cust-search-input').on('keydown', searchCustomers)
+  $('.cust-search-input').on('keyup', searchCustomers)
 
   $('.customer-search-display').on('click', '.retr-name', (e) => {
     let selectedUser = $(e.target).attr('data-id')
@@ -91,8 +91,10 @@ $(document).ready(() => {
   $('.cust-add-button').on('click', () => {
     if ($('.cust-add-input').val() !== '') {
       let newName = $('.cust-add-input').val();
+      $('.cust-add-input').val('');
       hotel.selectedCustomer = hotel.addCustomer(newName);
-      
+      $('.new-cust-display').text(`You have added: ${newName}`)
+      $('.customer-selected-display').text(`Currently selected: ${newName}`)
     }
   })
 
