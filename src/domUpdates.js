@@ -54,7 +54,9 @@ const domUpdates = {
       return false;
     }
   }
-
+  displayTotalRoomServiceRev(rev){
+    $('.daily-service-rev').text(`Today, the hotel has made $${rev} in room service revenue.`)
+  },
 
 
 }
