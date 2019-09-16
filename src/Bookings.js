@@ -42,6 +42,10 @@ class Bookings {
     }, 0)
     return filteredRooms.toFixed(2);
   }
+
+  getRoom(roomNum) {
+    return this.rooms.find(room => room.number === roomNum)
+  }
 }
 
 

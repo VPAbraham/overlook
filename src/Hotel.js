@@ -12,6 +12,8 @@ class Hotel {
     this.roomServices = roomServiceData.roomServices;
     this.customers = [];
     this.bookingDb;
+    this.selectedCustomer;
+    this.selectedRoom;
     this.hotelPrepHandler()
   }
   
@@ -86,9 +88,11 @@ class Hotel {
     }, 0)
   }
 
-  appendBasicInfo() {
-    domUpdates.displayDate(this.currentDay)
-    domUpdates.displayReservedRooms(this.bookingDb.getCurrentlyBooked())
+  addCustomer(name) {
+    let customerId = this.customers.length + 1;
+    let newCustomer = new Customer(customerId, name, [], [], [], this.menu, this.currentDate);
+    this.customers.push(newCustomer);
+    return this.customers[customerId - 1]
   }
 
   hotelPrepHandler() {
@@ -96,7 +100,6 @@ class Hotel {
     this.createMenu()
     this.instCustomers();
     this.instBookings();
-    // this.appendBasicInfo(); 
   }
 
 

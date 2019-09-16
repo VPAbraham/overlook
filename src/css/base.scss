@@ -32,10 +32,28 @@ a {
 .modal-start {
   position: fixed;
   z-index: 3000;
-  background-color: white;
+  background-color: $slate;
   height: 40vh;
   width: 60vw;
+  border: 3px solid $sky;
   margin: auto;
+  border-radius: 8px;
+  text-align: center;
+
+  h2 {
+    color: $sky;
+    font-size: 3em;
+    font-family: $subheader-font;
+  }
+
+  button {
+    width: 12vw;
+    height: 7vh;
+    border-radius: 5px;
+    font-family: $subheader-font;
+    background: lightgray;
+    font-size: 1em;
+  }
 }
 
 .modal-backdrop {
@@ -301,11 +319,11 @@ a {
 
     }
     header {
-      font-size: 3em;
+      font-size: 2.5em;
       width: 90vw;
       margin: auto;
       color: white;
-      height: 6%;
+      height: 8%;
       font-family: $body-font;
       background: $slate;
       border-radius: 15px 15px 0 0;
@@ -323,20 +341,13 @@ a {
     
     .customer-search {
 
-      .cust-search-button {
-        width: 55%;
-        margin: 12px;
-      }
-
-      .cust-search-clear {
-
-      }
-
       .customer-search-display {
         height: 50vh;
         margin: auto;
+        margin-top: 10px;
         width: 85%;
-        text-align: center;
+        overflow-y: scroll;
+        text-align: left;
         border-radius: 5px;
         background: $neutral;
         display: block;
@@ -347,12 +358,22 @@ a {
       .search-resp{
         font-size: 2em;
         font-family: $subheader-font;
+        transition: background .4s; 
+      }
+
+      .search-resp:hover {
+        background: lightgray;
       }
       
 
 
     }
-    .customer-info{
+    .customer-add{
+
+      .cust-add-button {
+        width: 55%;
+        margin: 12px;
+      }
     }
 
   #rooms-tab {

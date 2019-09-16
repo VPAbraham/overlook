@@ -32,11 +32,6 @@ Promise.all([
 $(document).ready(() => {
   $('#ui-tabs').tabs( {active: 0});
   $('#dboard-accordion').accordion();
-  // $('header').click(() => {
-  //   $('header').toggle('puff')
-  // });
-  // let date = '12/1/2019'
-  // $('.date-today').text(`Hello, today is ${hotel.getCurrDay()}`)
 
   function customerSearch() {
     let searchInput = $('.search-input').val().toLowerCase();
@@ -50,9 +45,9 @@ $(document).ready(() => {
 
   function openHotel() {
     console.log(hotel)
-    console.log(hotel.getRoomServiceRevToday())
-    console.log(hotel.bookingDb.getCurrentlyAvailable())
-    console.log(hotel.bookingDb.getCurrentlyBooked())
+    console.log(hotel.bookingDb.getBookingRevToday())
+    // console.log(hotel.bookingDb.getCurrentlyAvailable())
+    // console.log(hotel.bookingDb.getCurrentlyBooked())
     console.log(hotel.customers);
     domUpdates.displayDate(hotel.currentDay)
     domUpdates.displayReservedRooms(hotel.bookingDb.getCurrentlyBooked())
@@ -68,13 +63,50 @@ $(document).ready(() => {
     $('.modal-backdrop').hide();
   }) 
 
-  $('.cust-search-button').on('click', () => {
-    let searchInput = $('.cust-search-input').val();
-    let searchedCustomer = hotel.getCustomerByName(searchInput)
-    console.log(searchedCustomer)
-    let exists = domUpdates.displaySearchedCustomer(searchedCustomer)
+  function searchCustomers() {
+    let searchInput = $('.cust-search-input').val().toLowerCase();
+    let filteredUsers = hotel.customers.filter(customer => {
+      return customer.name.toLowerCase().includes(searchInput);
+    });
+    if( searchInput.length === 0) {
+      filteredUsers = [];
+      $('.customer-search-display').empty();
+    }
+    domUpdates.displaySearch(filteredUsers)
+  }
 
+  $('.cust-search-input').on('keydown', searchCustomers)
+
+  $('.customer-search-display').on('click', '.retr-name', (e) => {
+    let selectedUser = $(e.target).attr('data-id')
+    hotel.selectedCustomer = hotel.getCustomerByName(selectedUser);
+    let currentBooking = hotel.selectedCustomer.getCurrentBooking();
+    console.log(currentBooking)
+    if (currentBooking) {
+      hotel.selectedRoom = hotel.bookingDb.getRoom(currentBooking.roomNumber)
+    }
+    $('.customer-selected-display').text(`Currently selected: ${selectedUser}`)
+  });
+
+  $('.cust-add-button').on('click', () => {
+    if ($('.cust-add-input').val() !== '') {
+      let newName = $('.cust-add-input').val();
+      hotel.selectedCustomer = hotel.addCustomer(newName);
+      
+    }
   })
+
+  // })
+  //? $('.cust-search-button').on('click', () => {
+  //   let searchInput = $('.cust-search-input').val();
+  //   let searchedCustomer = hotel.getCustomerByName(searchInput)
+  //   console.log(searchedCustomer)
+  //   let exists = domUpdates.displaySearchedCustomer(searchedCustomer)
+  // ?  if (exists) { 
+  //   }
+  //? })
+
+
 
 });
 

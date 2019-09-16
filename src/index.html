@@ -11,6 +11,7 @@
 <!-- MODAL POPUP -->
 
     <div class="modal-start">
+      <h2>Welcome to Overlook Hotel Management</h2>
       <button class="start-hotel-button">Go to Your Hotel</button>
     </div>
     <div class="modal-backdrop">
@@ -35,7 +36,7 @@
           <h1>Overlook</h1>
           <h4>the leader in hotel booking services</h4>
         </span>
-        <div class="customer-search-display"></div>
+        <div class="customer-selected-display"></div>
       </header>
 
 <!-- DASHBOARD TAB -->
@@ -71,14 +72,15 @@
         <section>
           <div class="customer-search">
             <p class="cust-search-header cust-blurb">Customer search:</p>
-            <input class="cust-search-input cust-input" placeholder="enter customer name or ID number">
-            <button class="cust-search-button">Search customer</button>
-            <button class="cust-search-clear">Clear search</button>
-            <article class="customer-search-display"></article>
+            <input class="cust-search-input cust-input" placeholder="enter customer name">
+            <article class="customer-search-display">
+            </article>
           </div>
-          <div class="customer-info">
+          <div class="customer-add">
             <p class="cust-add-header cust-blurb">Add a customer:</p>
             <input class="cust-add-input cust-input" placeholder="enter new customer name">
+            <button class="cust-add-button">Add new customer</button>
+            <article class="new-customer-display"></article>
           </div>
         </section>
       </div>

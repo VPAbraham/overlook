@@ -41,22 +41,33 @@ const domUpdates = {
     $('.daily-service-rev').text(`Today, the hotel has made $${rev} in room service revenue.`)
   },
 
-  displaySearchedCustomer(input) {
-    let customerProfile = ''
-    if (input) {
-      customerProfile = 
-      `<p class="search-resp">Currently selected: ${input.name}</p><p class="search-resp"></p>`;
-      $('.customer-search-display').html(customerProfile)
-      return true;
-    } else {
-      customerProfile = '<p class="search-resp">This user does not exist in our database. You may add them or try another name.</p>';
-      $('.customer-search-display').html(customerProfile)
-      return false;
+  //? displaySearchedCustomer(input) {
+  // ?  let customerProfile = ''
+  //  ? if (input) {
+  //   ?  customerProfile = 
+  //    ? `<p class="search-resp">Currently selected: ${input.name}</p><p class="search-resp"></p>`;
+  //     $('.customer-search-display').html(customerProfile)
+  //     return true;
+  //   } else {
+  //     customerProfile = '<p class="search-resp">This user does not exist in our database. You may add them or try another name.</p>';
+  //     $('.customer-search-display').html(customerProfile)
+  //     return false;
+  //   }
+  //? }, 
+
+  displaySearch(results) {
+    $('.customer-search-display').empty();
+    if (results.length > 0 && results.length < 100) {
+      let filtElems = results.slice(0, 14).map(result =>
+        `<article class="search-resp">
+        <h2 class="retr-name" data-id="${result.name}">${result.name}</h2>
+        </article>`).join('');
+      $('.customer-search-display').append(filtElems);
     }
   }
-  displayTotalRoomServiceRev(rev){
-    $('.daily-service-rev').text(`Today, the hotel has made $${rev} in room service revenue.`)
-  },
+
+  // displayAddedCustomer(name) {
+  // }
 
 
 }
