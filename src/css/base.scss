@@ -9,6 +9,7 @@ $sky: #caebf2;
 $carbon: #a9a9a9;
 $watermelon: #ff3b3f;
 $neutral: #efefef;
+$background: rgb(226, 226, 255);
 
 
 
@@ -99,7 +100,7 @@ a {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: $sky;
+  background: $background;
 
 
   #tab-btn-container {
@@ -119,7 +120,7 @@ a {
       font-weight: 700;
       color: black;
       background: $slate;
-      border-radius: 3px;
+      // border-radius: 3px;
       justify-content: space-evenly;
       width: 25%;
       transition: all .2s ease-in-out, box-shadow .3s; 
