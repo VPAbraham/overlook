@@ -21,6 +21,7 @@ $neutral: #efefef;
 
 body {
   position: relative;
+  font-family: $subheader-font;
 }
 
 a { 
@@ -48,7 +49,7 @@ a {
 .page-header {
   background-color: $tan;
   position: relative;
-  color: $carbon;
+  color: black;
   font-weight: 700;
   display: flex;
   width: 100%;
@@ -105,6 +106,7 @@ a {
     display: flex;
     list-style: none;
     width: 100%;
+
     font-family: $subheader-font;
     align-items: center;
     padding: 0;
@@ -115,14 +117,14 @@ a {
       text-align: center;
       font-size: 1.2em;
       font-weight: 700;
-      color: white;
-      background: $neutral;
+      color: black;
+      background: $slate;
       border-radius: 3px;
       justify-content: space-evenly;
       width: 25%;
       transition: all .2s ease-in-out, box-shadow .3s; 
       text-decoration: none;
-      border-left: 3px solid rgb(30, 31, 85);
+      border-left: 1px solid rgb(0, 0, 0);
     }
     
     li:hover {
