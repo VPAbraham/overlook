@@ -32,11 +32,6 @@ Promise.all([
 $(document).ready(() => {
   $('#ui-tabs').tabs( {active: 0});
   $('#dboard-accordion').accordion();
-  // $('header').click(() => {
-  //   $('header').toggle('puff')
-  // });
-  // let date = '12/1/2019'
-  // $('.date-today').text(`Hello, today is ${hotel.getCurrDay()}`)
 
   function customerSearch() {
     let searchInput = $('.search-input').val().toLowerCase();
@@ -50,7 +45,7 @@ $(document).ready(() => {
 
   function openHotel() {
     console.log(hotel)
-    console.log(hotel.getRoomServiceRevToday())
+    console.log(hotel.bookingDb.getBookingRevToday())
     console.log(hotel.bookingDb.getCurrentlyAvailable())
     console.log(hotel.bookingDb.getCurrentlyBooked())
     console.log(hotel.customers);
@@ -68,13 +63,34 @@ $(document).ready(() => {
     $('.modal-backdrop').hide();
   }) 
 
+  function searchCustomers() {
+    console.log('hi')
+    let searchInput = $('.cust-search-input').val().toLowerCase();
+    // disable add customer button when added
+    let filteredUsers = hotel.customers.filter(customer => {
+      return customer.name.toLowerCase().includes(searchInput);
+    });
+    if(searchInput.length === 0) {
+      // enable add customer button
+      filteredUsers = [];
+      $('.customer-search-display').empty();
+    }
+    domUpdates.displaySearch(filteredUsers)
+  }
+
+  $('.cust-search-input').on('keydown', searchCustomers)
+
   $('.cust-search-button').on('click', () => {
     let searchInput = $('.cust-search-input').val();
     let searchedCustomer = hotel.getCustomerByName(searchInput)
     console.log(searchedCustomer)
     let exists = domUpdates.displaySearchedCustomer(searchedCustomer)
-
+    if (exists) {
+      
+    }
   })
+
+
 
 });
 

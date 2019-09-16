@@ -86,17 +86,11 @@ class Hotel {
     }, 0)
   }
 
-  appendBasicInfo() {
-    domUpdates.displayDate(this.currentDay)
-    domUpdates.displayReservedRooms(this.bookingDb.getCurrentlyBooked())
-  }
-
   hotelPrepHandler() {
     this.getCurrDay();
     this.createMenu()
     this.instCustomers();
     this.instBookings();
-    // this.appendBasicInfo(); 
   }
 
 
