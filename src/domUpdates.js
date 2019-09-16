@@ -42,14 +42,17 @@ const domUpdates = {
   },
 
   displaySearchedCustomer(input) {
-    if (typeof input === 'number') {
-      console.log('num')
+    let customerProfile = ''
+    if (input) {
+      customerProfile = 
+      `<p class="search-resp">Currently selected: ${input.name}</p><p class="search-resp"></p>`;
+      $('.customer-search-display').html(customerProfile)
+      return true;
+    } else {
+      customerProfile = '<p class="search-resp">This user does not exist in our database. You may add them or try another name.</p>';
+      $('.customer-search-display').html(customerProfile)
+      return false;
     }
-
-    if (typeof input === 'string') {
-      console.log('str')
-    }
-
   }
 
 

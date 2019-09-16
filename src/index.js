@@ -69,7 +69,10 @@ $(document).ready(() => {
 
   $('.cust-search-button').on('click', () => {
     let searchInput = $('.cust-search-input').val();
-    console.log(hotel.getCustomerByName(searchInput))
+    let searchedCustomer = hotel.getCustomerByName(searchInput)
+    console.log(searchedCustomer)
+    let exists = domUpdates.displaySearchedCustomer(searchedCustomer)
+
   })
 
 });

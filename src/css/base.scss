@@ -330,14 +330,21 @@ a {
       }
 
       .customer-search-display {
-              height: 50vh;
-              margin: auto;
-              width: 85%;
-              border-radius: 5px;
-              background: $neutral;
-              display: block;
-              border: solid 1px black;
-            }
+        height: 50vh;
+        margin: auto;
+        width: 85%;
+        text-align: center;
+        border-radius: 5px;
+        background: $neutral;
+        display: block;
+        color: black;
+        border: solid 1px black;
+      }
+
+      .search-resp{
+        font-size: 2em;
+        font-family: $subheader-font;
+      }
       
 
 
