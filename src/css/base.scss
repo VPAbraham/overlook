@@ -319,11 +319,11 @@ a {
 
     }
     header {
-      font-size: 3em;
+      font-size: 2.5em;
       width: 90vw;
       margin: auto;
       color: white;
-      height: 6%;
+      height: 8%;
       font-family: $body-font;
       background: $slate;
       border-radius: 15px 15px 0 0;
@@ -341,18 +341,10 @@ a {
     
     .customer-search {
 
-      .cust-search-button {
-        width: 55%;
-        margin: 12px;
-      }
-
-      .cust-search-clear {
-
-      }
-
       .customer-search-display {
         height: 50vh;
         margin: auto;
+        margin-top: 10px;
         width: 85%;
         overflow-y: scroll;
         text-align: center;
@@ -376,7 +368,12 @@ a {
 
 
     }
-    .customer-info{
+    .customer-add{
+
+      .cust-add-button {
+        width: 55%;
+        margin: 12px;
+      }
     }
 
   #rooms-tab {

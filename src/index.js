@@ -46,8 +46,8 @@ $(document).ready(() => {
   function openHotel() {
     console.log(hotel)
     console.log(hotel.bookingDb.getBookingRevToday())
-    console.log(hotel.bookingDb.getCurrentlyAvailable())
-    console.log(hotel.bookingDb.getCurrentlyBooked())
+    // console.log(hotel.bookingDb.getCurrentlyAvailable())
+    // console.log(hotel.bookingDb.getCurrentlyBooked())
     console.log(hotel.customers);
     domUpdates.displayDate(hotel.currentDay)
     domUpdates.displayReservedRooms(hotel.bookingDb.getCurrentlyBooked())
@@ -64,14 +64,11 @@ $(document).ready(() => {
   }) 
 
   function searchCustomers() {
-    console.log('hi')
     let searchInput = $('.cust-search-input').val().toLowerCase();
-    //! disable add customer button when added
     let filteredUsers = hotel.customers.filter(customer => {
       return customer.name.toLowerCase().includes(searchInput);
     });
-    if(searchInput.length === 0) {
-      //! enable add customer button
+    if( searchInput.length === 0) {
       filteredUsers = [];
       $('.customer-search-display').empty();
     }
@@ -80,9 +77,10 @@ $(document).ready(() => {
 
   $('.cust-search-input').on('keydown', searchCustomers)
 
-  $('.customer-search-display').on('click', '.search-resp', () => {
-    //! disable add customer
-    let currentUser = this.innerText;
+  $('.customer-search-display').on('click', '.retr-name', (e) => {
+    let selectedUser = $(e.target).attr('data-id')
+    hotel.selectedCustomer = hotel.getCustomerByName(selectedUser);
+    console.log(hotel.selectedCustomer)
   });
 
   // })
