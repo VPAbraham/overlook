@@ -55,6 +55,8 @@ $(document).ready(() => {
     domUpdates.displayPercentRoomsAvailable(hotel.bookingDb.getPercentRoomsAvailable())
     domUpdates.displayTotalBookingRev(hotel.bookingDb.getBookingRevToday())
     domUpdates.displayTotalRoomServiceRev(hotel.getRoomServiceRevToday())
+    domUpdates.displayMostBooked(hotel.bookingDb.getPopularBookingDate())
+    console.log(hotel.bookingDb.getPopularBookingDate())
   }
 
   $('.start-hotel-button').on('click', () => {

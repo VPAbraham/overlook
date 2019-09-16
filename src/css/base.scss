@@ -381,16 +381,23 @@ a {
       }
     }
 
+    
+  }
   #rooms-tab {
-    background: green;
+    color: black;
+    
+    .rooms-content {
+      width: 100%;
+      height: 70vh;
+      border: 2px solid $slate;
+      background: $neutral;
+    }
   }
 
   #orders-tab {
     background: rgb(196, 189, 189);
   }
-
-  }
-
+  
 }
 
 

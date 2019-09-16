@@ -60,14 +60,15 @@ const domUpdates = {
     if (results.length > 0 && results.length < 100) {
       let filtElems = results.slice(0, 14).map(result =>
         `<article class="search-resp">
-        <h2 class="retr-name" data-id="${result.name}">${result.name}</h2>
-        </article>`).join('');
+          <h2 class="retr-name" data-id="${result.name}">${result.name}</h2>
+         </article>`).join('');
       $('.customer-search-display').append(filtElems);
     }
-  }
+  },
 
-  // displayAddedCustomer(name) {
-  // }
+ displayMostBooked(most) {
+  $('.most-booked').text(`Those most booked day is currently ${most.date} with ${most.count} customers.`)
+ }
 
 
 }
