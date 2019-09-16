@@ -37,10 +37,26 @@ const domUpdates = {
     $('.daily-book-rev').text(`Today, the hotel has made $${rev} in booking revenue.`)
   },
 
-  displayTotalRoomServiceRev(rev){
+  displayTotalRoomServiceRev(rev) {
     $('.daily-service-rev').text(`Today, the hotel has made $${rev} in room service revenue.`)
   },
 
+  displaySearchedCustomer(input) {
+    let customerProfile = ''
+    if (input) {
+      customerProfile = 
+      `<p class="search-resp">Currently selected: ${input.name}</p><p class="search-resp"></p>`;
+      $('.customer-search-display').html(customerProfile)
+      return true;
+    } else {
+      customerProfile = '<p class="search-resp">This user does not exist in our database. You may add them or try another name.</p>';
+      $('.customer-search-display').html(customerProfile)
+      return false;
+    }
+  }
+  displayTotalRoomServiceRev(rev){
+    $('.daily-service-rev').text(`Today, the hotel has made $${rev} in room service revenue.`)
+  },
 
 
 }

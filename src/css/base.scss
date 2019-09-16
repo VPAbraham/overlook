@@ -9,6 +9,7 @@ $sky: #caebf2;
 $carbon: #a9a9a9;
 $watermelon: #ff3b3f;
 $neutral: #efefef;
+$background: rgb(226, 226, 255);
 
 
 
@@ -21,6 +22,7 @@ $neutral: #efefef;
 
 body {
   position: relative;
+  font-family: $subheader-font;
 }
 
 a { 
@@ -48,7 +50,7 @@ a {
 .page-header {
   background-color: $tan;
   position: relative;
-  color: $carbon;
+  color: black;
   font-weight: 700;
   display: flex;
   width: 100%;
@@ -98,13 +100,14 @@ a {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: $sky;
+  background: $background;
 
 
   #tab-btn-container {
     display: flex;
     list-style: none;
     width: 100%;
+
     font-family: $subheader-font;
     align-items: center;
     padding: 0;
@@ -115,14 +118,14 @@ a {
       text-align: center;
       font-size: 1.2em;
       font-weight: 700;
-      color: white;
-      background: $neutral;
-      border-radius: 3px;
+      color: black;
+      background: $slate;
+      // border-radius: 3px;
       justify-content: space-evenly;
       width: 25%;
       transition: all .2s ease-in-out, box-shadow .3s; 
       text-decoration: none;
-      border-left: 3px solid rgb(30, 31, 85);
+      border-left: 1px solid rgb(0, 0, 0);
     }
     
     li:hover {
@@ -283,6 +286,8 @@ a {
       height: 2.8em;
       border-radius: 5px;
       font-family: $body-font;
+      display: block;
+      margin: auto;
     }
 
     section {
@@ -318,6 +323,33 @@ a {
     
     .customer-search {
 
+      .cust-search-button {
+        width: 55%;
+        margin: 12px;
+      }
+
+      .cust-search-clear {
+
+      }
+
+      .customer-search-display {
+        height: 50vh;
+        margin: auto;
+        width: 85%;
+        text-align: center;
+        border-radius: 5px;
+        background: $neutral;
+        display: block;
+        color: black;
+        border: solid 1px black;
+      }
+
+      .search-resp{
+        font-size: 2em;
+        font-family: $subheader-font;
+      }
+      
+
 
     }
     .customer-info{
@@ -334,6 +366,7 @@ a {
   }
 
 }
+
 
 h5 {
   font-family: $body-font;
