@@ -66,12 +66,12 @@ $(document).ready(() => {
   function searchCustomers() {
     console.log('hi')
     let searchInput = $('.cust-search-input').val().toLowerCase();
-    // disable add customer button when added
+    //! disable add customer button when added
     let filteredUsers = hotel.customers.filter(customer => {
       return customer.name.toLowerCase().includes(searchInput);
     });
     if(searchInput.length === 0) {
-      // enable add customer button
+      //! enable add customer button
       filteredUsers = [];
       $('.customer-search-display').empty();
     }
@@ -80,15 +80,20 @@ $(document).ready(() => {
 
   $('.cust-search-input').on('keydown', searchCustomers)
 
-  $('.cust-search-button').on('click', () => {
-    let searchInput = $('.cust-search-input').val();
-    let searchedCustomer = hotel.getCustomerByName(searchInput)
-    console.log(searchedCustomer)
-    let exists = domUpdates.displaySearchedCustomer(searchedCustomer)
-    if (exists) {
-      
-    }
-  })
+  $('.customer-search-display').on('click', '.search-resp', () => {
+    //! disable add customer
+    let currentUser = this.innerText;
+  });
+
+  // })
+  //? $('.cust-search-button').on('click', () => {
+  //   let searchInput = $('.cust-search-input').val();
+  //   let searchedCustomer = hotel.getCustomerByName(searchInput)
+  //   console.log(searchedCustomer)
+  //   let exists = domUpdates.displaySearchedCustomer(searchedCustomer)
+  // ?  if (exists) { 
+  //   }
+  //? })
 
 
 
