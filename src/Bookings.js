@@ -66,6 +66,26 @@ class Bookings {
     }, {date: '', count: 0})
   }
 
+  getUnpopularBookingDate() {
+    let allBookings = this.bookings.reduce((dayBooks, order) => {
+      if (!dayBooks[order.date]) {
+        dayBooks[order.date] = 0;
+      }
+      dayBooks[order.date]++;
+      return dayBooks;
+    }, {})
+    return Object.keys(allBookings).reduce((mostBooked, date) => {
+      if (allBookings[date] < mostBooked.count) {
+        mostBooked = {
+          'date': date,
+          'count': allBookings[date]
+        }
+      }
+      return mostBooked;
+    }, { date: '', count: 50})
+  }
+
+  
 
 }
 

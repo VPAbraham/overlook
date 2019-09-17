@@ -66,9 +66,10 @@ const domUpdates = {
     }
   },
 
- displayMostBooked(most) {
-  $('.most-booked').text(`Those most booked day is currently ${most.date} with ${most.count} customers.`)
- }
+  displayMostBooked(most, least) {
+    $('.most-booked').text(`Those most booked day is currently ${most.date} with ${most.count} customers.`)
+    $('.least-booked').text(`Those least booked day is currently ${least.date} with ${least.count} customers.`)
+  }
 
 
 }
