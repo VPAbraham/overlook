@@ -32,6 +32,7 @@ Promise.all([
 $(document).ready(() => {
   $('#ui-tabs').tabs( {active: 0});
   $('#dboard-accordion').accordion();
+  $('#datepicker').datepicker({dateFormat: 'yy/mm/dd'});
 
   function customerSearch() {
     let searchInput = $('.search-input').val().toLowerCase();
@@ -44,10 +45,8 @@ $(document).ready(() => {
   }
 
   function openHotel() {
-    console.log(hotel)
-    console.log(hotel.bookingDb.getBookingRevToday())
-    // console.log(hotel.bookingDb.getCurrentlyAvailable())
-    // console.log(hotel.bookingDb.getCurrentlyBooked())
+    console.log(hotel);
+    console.log(hotel.bookingDb.getBookingRevToday());
     console.log(hotel.customers);
     domUpdates.displayDate(hotel.currentDay)
     domUpdates.displayReservedRooms(hotel.bookingDb.getCurrentlyBooked())
@@ -105,6 +104,12 @@ $(document).ready(() => {
       $('.new-cust-display').text(`You have added: ${newName}`)
       $('.customer-selected-display').text(`Currently selected: ${newName}`)
     }
+  })
+
+  $('.date-room-button').on('click', () => {
+    let date = $('#datepicker').val();
+    console.log(date)
+    console.log(hotel.bookingDb.getCurrentlyBooked(date))
   })
 
   // })

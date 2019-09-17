@@ -58,7 +58,7 @@ const domUpdates = {
   displaySearch(results) {
     $('.customer-search-display').empty();
     if (results.length > 0 && results.length < 100) {
-      let filtElems = results.slice(0, 14).map(result =>
+      let filtElems = results.slice(0, 20).map(result =>
         `<article class="search-resp">
           <h2 class="retr-name" data-id="${result.name}">${result.name}</h2>
          </article>`).join('');
