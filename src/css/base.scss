@@ -71,6 +71,8 @@ a {
 
 #ui-datepicker-div {
   background: $carbon;
+  border: 2px solid black;
+  border-radius: 4px;
 }
 .page-header {
   background-color: $tan;
@@ -410,6 +412,12 @@ a {
       height: 70vh;
       border: 2px solid $slate;
       background: $neutral;
+
+      .find-rooms-block {
+        border: 1px solid black;
+        margin: 1.5em;
+
+      }
     }
   }
 

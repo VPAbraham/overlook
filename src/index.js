@@ -109,7 +109,8 @@ $(document).ready(() => {
   $('.date-room-button').on('click', () => {
     let date = $('#datepicker').val();
     console.log(date)
-    console.log(hotel.bookingDb.getCurrentlyBooked(date))
+    let rooms = hotel.bookingDb.getCurrentlyAvailable(date);
+    domUpdates.displayRoomsForDateSel(rooms);
   })
 
   // })

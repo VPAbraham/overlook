@@ -69,6 +69,21 @@ const domUpdates = {
   displayMostBooked(most, least) {
     $('.most-booked').text(`Those most booked day is currently ${most.date} with ${most.count} customers.`)
     $('.least-booked').text(`Those least booked day is currently ${least.date} with ${least.count} customers.`)
+  },
+
+  displayRoomsForDateSel(rooms) {
+    let vacRooms = '';
+    rooms.forEach(room =>
+      vacRooms +=
+      `<tr>
+        <th>${room.number}</th>
+        <th>${room.roomType}</th>
+        <th>${room.bidet}</th>
+        <th>${room.bedSize}</th>
+        <th>${room.costPerNight}</th>
+      </tr>`
+    )
+    $('.av-room-search-disp').append(vacRooms);
   }
 
 
