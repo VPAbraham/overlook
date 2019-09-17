@@ -55,6 +55,8 @@ $(document).ready(() => {
     domUpdates.displayPercentRoomsAvailable(hotel.bookingDb.getPercentRoomsAvailable())
     domUpdates.displayTotalBookingRev(hotel.bookingDb.getBookingRevToday())
     domUpdates.displayTotalRoomServiceRev(hotel.getRoomServiceRevToday())
+    domUpdates.displayMostBooked(hotel.bookingDb.getPopularBookingDate(), hotel.bookingDb.getUnpopularBookingDate())
+    console.log(hotel.selectedCustomer)
   }
 
   $('.start-hotel-button').on('click', () => {
@@ -75,24 +77,33 @@ $(document).ready(() => {
     domUpdates.displaySearch(filteredUsers)
   }
 
-  $('.cust-search-input').on('keydown', searchCustomers)
+  $('.cust-search-input').on('keyup', searchCustomers);
+
+  $('.clear-customer-button').on('click', () => {
+    hotel.selectedCustomer = undefined;
+    $('.customer-selected-display').text('');
+    $('.cust-search-input').val('');
+    $('.customer-search-display').empty();
+  })
 
   $('.customer-search-display').on('click', '.retr-name', (e) => {
     let selectedUser = $(e.target).attr('data-id')
     hotel.selectedCustomer = hotel.getCustomerByName(selectedUser);
     let currentBooking = hotel.selectedCustomer.getCurrentBooking();
-    console.log(currentBooking)
     if (currentBooking) {
       hotel.selectedRoom = hotel.bookingDb.getRoom(currentBooking.roomNumber)
     }
     $('.customer-selected-display').text(`Currently selected: ${selectedUser}`)
+    console.log(hotel.selectedCustomer)
   });
 
   $('.cust-add-button').on('click', () => {
     if ($('.cust-add-input').val() !== '') {
       let newName = $('.cust-add-input').val();
+      $('.cust-add-input').val('');
       hotel.selectedCustomer = hotel.addCustomer(newName);
-      
+      $('.new-cust-display').text(`You have added: ${newName}`)
+      $('.customer-selected-display').text(`Currently selected: ${newName}`)
     }
   })
 

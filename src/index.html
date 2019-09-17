@@ -73,6 +73,7 @@
           <div class="customer-search">
             <p class="cust-search-header cust-blurb">Customer search:</p>
             <input class="cust-search-input cust-input" placeholder="enter customer name">
+            <button class="clear-customer-button">Clear Customer Selection</button>
             <article class="customer-search-display">
             </article>
           </div>
@@ -80,7 +81,7 @@
             <p class="cust-add-header cust-blurb">Add a customer:</p>
             <input class="cust-add-input cust-input" placeholder="enter new customer name">
             <button class="cust-add-button">Add new customer</button>
-            <article class="new-customer-display"></article>
+            <article class="new-cust-display"></article>
           </div>
         </section>
       </div>
@@ -88,13 +89,20 @@
 <!-- ROOMS TAB -->
 
       <div id="rooms-tab" class="style-tabs">
-        <h3>Select Room</h3>
-        <select id="select-menu" class="dropdown">
+
+        <section class="rooms-content">
+          <section class="room-disp-1">
+            <article class="most-booked"></article>
+            <article class="least-booked"></article>
+          </section>
+        </section>
+        <!-- <h3>Select Room</h3> -->
+        <!-- <select id="select-menu" class="dropdown">
           <option value="1">First</option>
           <option value="2">Second</option>
           <option value="3">Third</option>
           <option value="4">Fourth</option>          
-        </select>
+        </select> -->
       </div>
       
 <!-- ORDERS TAB -->
