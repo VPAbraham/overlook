@@ -406,18 +406,48 @@ a {
       height: 70vh;
       border: 2px solid $slate;
       background: $neutral;
+      
+      .rooms-container {
+        display: flex;
+        justify-content: space-evenly;
+      }
 
-      .find-rooms-block {
+      .find-rooms-block,
+      .all-cust-bookings {
         border: 2px solid black;
-        margin: 1.5em;
         width: 25vw;
         border-radius: 5px;
+        
+        .all-cust-heading {
+          position: relative;
+        }
 
-        .av-room-search-disp {
+        .room-error {
+          display: inline;
+          float: right;
+          position: absolute;
+          color: red;
+          visibility: hidden;
+        }
+
+        .room-selector, 
+        .booking-history {
+          border-bottom: 1px solid black;
+        }
+
+        
+
+        .av-room-search-disp,
+        .all-cust-display {
           overflow-y: scroll;          
           display: block;
-          height: 40vh;
+          height: 50vh;
           background: #8d8989;
+
+
+          th {
+            margin: 0 5px;
+          }
 
         }
       }
@@ -473,7 +503,8 @@ a {
         width: 25vw;
         border-radius: 5px;
         height: 100%;
-        display: inline-block
+        display: inline-block;
+        margin-top: 7%;
       }
     }
   } 

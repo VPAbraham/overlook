@@ -15,7 +15,11 @@ class Customer {
 
   getRoomServicesByDate(date) {
     return this.roomServices.filter(service => service.date === date)
-  }  
+  }
+  
+  getAllRoomServices() {
+    return this.roomServices
+  }
 
 }
 

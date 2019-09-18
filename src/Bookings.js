@@ -93,6 +93,11 @@ class Bookings {
     }, { date: '', count: 50 })
   }
 
+  returnUserBookingsById(id) {
+    return this.bookings.filter(booking => booking.userID === id)
+  }
+
+
   
 
 }

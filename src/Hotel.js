@@ -103,11 +103,6 @@ class Hotel {
     return this.customers[customerId - 1]
   }
 
-  bookRoom(roomNumber, date, customer) {
-
-    this.bookingDb
-  }
-
   hotelPrepHandler() {
     this.getCurrDay();
     this.createMenu()
@@ -115,8 +110,19 @@ class Hotel {
     this.instBookings();
   }
 
-  selectRoomByNum(num) {
+  selectRoomByNum() {
     return this.rooms
+  }
+
+  bookRoom(date) {
+    console.log(date)
+    let newBooking = {
+      'userID': this.selectedCustomer.id,
+      'date': date,
+      'roomNumber': this.selectedRoom.number,
+      'customBooked': true
+    }
+    this.bookingDb.bookings.push(newBooking);
   }
 
 

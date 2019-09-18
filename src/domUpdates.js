@@ -123,6 +123,24 @@ const domUpdates = {
     elem.append(ordersTable);
   },
 
+  displayUserBookings(bookings) {
+    let bookingTable = 
+    `<tr>
+      <th>Room Number</th>
+      <th>Date</th>
+      <th>     </th>
+    </tr>`
+    bookings.forEach(booking => 
+      bookingTable += 
+      `<tr class="booking-history" booking-id="${bookings[booking]}">
+        <th>${booking.roomNumber}</th>
+        <th>${booking.date}</th>
+        <th><button>UNBOOK</button></th>
+      </tr>`
+    )
+    $('.all-cust-display').append(bookingTable);
+  }
+
 
 
 }
