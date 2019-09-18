@@ -27,3 +27,5 @@ Overlook is a hotel management app that uses mock data to simulate the every day
 1. Unit testing has been done on many of the methods and functions included in the project.
 
 2. Run these by entering `npm test`.
+
+![App in action](http://www.giphy.com/gifs/jUQNH4juZi4wg0X96j)
