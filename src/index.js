@@ -24,39 +24,26 @@ Promise.all([
     .then(resp => resp.json()),
 ]).then(data => hotel = new Hotel(data[0], data[1], data[2], data[3]))
   .catch(error => console.log(`Promise error: ${error}`))
-// .then(data => console.log(hotel.currentDay))
-// .then(() => console.log(hotel.menu));
-// <--  -->
 
 
 $(document).ready(() => {
   $('#ui-tabs').tabs( {active: 0});
   $('#dboard-accordion').accordion();
-
-  function customerSearch() {
-    let searchInput = $('.search-input').val().toLowerCase();
-    let foundCustomers = hotel.customers.filter(customer => {
-      return customer.name.toLowerCase().includes(searchInput);
-    })
-    if (searchInput.length === 0) {
-      foundCustomers = [];
-    } 
-  }
+  $('#datepicker').datepicker({dateFormat: 'yy/mm/dd'});
+  $('#datepicker-2').datepicker({ dateFormat: 'yy/mm/dd' });
+  $('.book-room-button').attr("disabled", true);
 
   function openHotel() {
-    console.log(hotel)
-    console.log(hotel.bookingDb.getBookingRevToday())
-    // console.log(hotel.bookingDb.getCurrentlyAvailable())
-    // console.log(hotel.bookingDb.getCurrentlyBooked())
+    console.log(hotel);
     console.log(hotel.customers);
     domUpdates.displayDate(hotel.currentDay)
     domUpdates.displayReservedRooms(hotel.bookingDb.getCurrentlyBooked())
     domUpdates.displayAvailableRooms(hotel.bookingDb.getCurrentlyAvailable())
     domUpdates.displayPercentRoomsAvailable(hotel.bookingDb.getPercentRoomsAvailable())
+    domUpdates.displayTodayOrders(hotel.getRoomServicesByDay())
     domUpdates.displayTotalBookingRev(hotel.bookingDb.getBookingRevToday())
     domUpdates.displayTotalRoomServiceRev(hotel.getRoomServiceRevToday())
     domUpdates.displayMostBooked(hotel.bookingDb.getPopularBookingDate(), hotel.bookingDb.getUnpopularBookingDate())
-    console.log(hotel.selectedCustomer)
   }
 
   $('.start-hotel-button').on('click', () => {
@@ -84,9 +71,14 @@ $(document).ready(() => {
     $('.customer-selected-display').text('');
     $('.cust-search-input').val('');
     $('.customer-search-display').empty();
-  })
+    $('.book-room-button').attr("disabled", true);
+  });
+
+  function arrangeForSelectedCustomer() {
+  }
 
   $('.customer-search-display').on('click', '.retr-name', (e) => {
+    $('.book-room-button').attr("disabled", false);
     let selectedUser = $(e.target).attr('data-id')
     hotel.selectedCustomer = hotel.getCustomerByName(selectedUser);
     let currentBooking = hotel.selectedCustomer.getCurrentBooking();
@@ -96,6 +88,8 @@ $(document).ready(() => {
     $('.customer-selected-display').text(`Currently selected: ${selectedUser}`)
     console.log(hotel.selectedCustomer)
   });
+
+
 
   $('.cust-add-button').on('click', () => {
     if ($('.cust-add-input').val() !== '') {
@@ -107,15 +101,31 @@ $(document).ready(() => {
     }
   })
 
-  // })
-  //? $('.cust-search-button').on('click', () => {
-  //   let searchInput = $('.cust-search-input').val();
-  //   let searchedCustomer = hotel.getCustomerByName(searchInput)
-  //   console.log(searchedCustomer)
-  //   let exists = domUpdates.displaySearchedCustomer(searchedCustomer)
-  // ?  if (exists) { 
-  //   }
-  //? })
+  $('.date-room-button').on('click', () => {
+    let date = $('#datepicker').val();
+    console.log(date)
+    let rooms = hotel.bookingDb.getCurrentlyAvailable(date);
+    domUpdates.displayRoomsForDateSel(rooms);
+  })
+
+  $('.av-room-search-disp').on('click', '.room-selector', (e) => {
+    if (hotel.selectedCustomer) {
+      let roomNum = $(e.target).parent().attr('room-id');
+      console.log(roomNum)
+      console.log(hotel.selectRoomByNum(roomNum))
+      console.log(hotel)
+      hotel.selectedRoom = hotel.selectRoomByNum(roomNum)
+      console.log(hotel.selectedRoom)
+    }
+  }),
+
+  $('.search-orders-button').on('click', () => {
+    if ($('.order-datepicker').val() !== '') {
+      let selectedDate = $('.order-datepicker').val();
+      domUpdates.displayTodayOrders(hotel.getRoomServicesByDay(selectedDate))
+      console.log(hotel.getRoomServicesByDay(selectedDate))
+    } 
+  })
 
 
 

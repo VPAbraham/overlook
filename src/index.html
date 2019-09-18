@@ -95,6 +95,17 @@
             <article class="most-booked"></article>
             <article class="least-booked"></article>
           </section>
+          <section class="find-rooms-block">
+            <p>View available rooms for a selected date:</p>
+            <p>
+              Date: 
+              <input type="text" id="datepicker"  class="room-av-datepicker">
+            </p>
+            <button class="date-room-button">Search rooms</button>
+            <button class="book-room-button">Book this room</button>
+            <table class="av-room-search-disp">
+            </table>
+          </section>
         </section>
         <!-- <h3>Select Room</h3> -->
         <!-- <select id="select-menu" class="dropdown">
@@ -108,6 +119,32 @@
 <!-- ORDERS TAB -->
 
       <div id="orders-tab" class="style-tabs">
+        <section class="orders-content">
+          <p>View room service data for a selected date:</p>
+          <p>
+            Date:
+            <input type="text" id="datepicker-2" class="order-datepicker">
+            <button class="search-orders-button">Search Orders</button>
+          </p>
+          <article class="general-orders"> 
+            <p>Today's Room Service Orders</p>
+            <table class="today-service-disp">
+            </table>
+            <!-- <table class="today-service-disp">
+              <tr>
+                <th>Number</th>
+                <th>Type</th>
+                <th>Bidet</th>
+                <th>Bed Size</th>
+                <th># Beds</th>
+                <th>Cost</th>
+              </tr>
+            </table> -->
+          </article>
+          <article class="cust-orders">
+
+          </article>
+        </section>
       </div>
     </div>
   </body>

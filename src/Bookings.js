@@ -9,19 +9,27 @@ class Bookings {
     this.reservedRooms;
   }
 
-  getCurrentlyBooked() {
+  getCurrentlyBooked(day) {
     let allBooks = this.bookings.filter(booking => {
-      return booking.date === this.currentDay
+      if (day) {
+        return booking.date === day;
+      } else {
+        return booking.date === this.currentDay
+      }
     });
     this.reservedRooms = allBooks.sort((a, b) => a.roomNumber - b.roomNumber)
     return this.reservedRooms
   }
 
-  getCurrentlyAvailable() {
+  getCurrentlyAvailable(day) {
     let bookedNums = this.bookings.filter(booking => {
-      return booking.date === this.currentDay
+      if (day) {
+        return booking.date === day
+      } else {
+        return booking.date === this.currentDay
+      }
     }).map(booking => booking.roomNumber);
-    this.vacantRooms = this.rooms.filter(room => 
+    this.vacantRooms = this.rooms.filter(room =>
       !bookedNums.includes(room.number))
     return this.vacantRooms;
   }
@@ -49,7 +57,7 @@ class Bookings {
 
   getPopularBookingDate() {
     let allBookings = this.bookings.reduce((dayBooks, order) => {
-      if(!dayBooks[order.date]) {
+      if (!dayBooks[order.date]) {
         dayBooks[order.date] = 0;
       }
       dayBooks[order.date]++;
@@ -63,7 +71,7 @@ class Bookings {
         }
       }
       return mostBooked;
-    }, {date: '', count: 0})
+    }, { date: '', count: 0 })
   }
 
   getUnpopularBookingDate() {
@@ -82,7 +90,7 @@ class Bookings {
         }
       }
       return mostBooked;
-    }, { date: '', count: 50})
+    }, { date: '', count: 50 })
   }
 
   

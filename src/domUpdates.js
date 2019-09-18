@@ -41,6 +41,12 @@ const domUpdates = {
     $('.daily-service-rev').text(`Today, the hotel has made $${rev} in room service revenue.`)
   },
 
+  displayNothingHere(elem) {
+    [elem].append(
+      '<p>Nothing to Show Here!</p>'
+    )
+  },
+
   //? displaySearchedCustomer(input) {
   // ?  let customerProfile = ''
   //  ? if (input) {
@@ -58,7 +64,7 @@ const domUpdates = {
   displaySearch(results) {
     $('.customer-search-display').empty();
     if (results.length > 0 && results.length < 100) {
-      let filtElems = results.slice(0, 14).map(result =>
+      let filtElems = results.slice(0, 20).map(result =>
         `<article class="search-resp">
           <h2 class="retr-name" data-id="${result.name}">${result.name}</h2>
          </article>`).join('');
@@ -69,7 +75,54 @@ const domUpdates = {
   displayMostBooked(most, least) {
     $('.most-booked').text(`Those most booked day is currently ${most.date} with ${most.count} customers.`)
     $('.least-booked').text(`Those least booked day is currently ${least.date} with ${least.count} customers.`)
-  }
+  },
+
+  displayRoomsForDateSel(rooms) {
+    $('.av-room-search-disp').empty();
+    let vacRooms = 
+    `<tr>
+      <th>Number</th>
+      <th>Type</th>
+      <th>Bidet</th>
+      <th>Bed Size</th>
+      <th># Beds</th>
+      <th>Cost</th>
+    </tr>`;
+    rooms.forEach(room =>
+      vacRooms +=
+      `<tr class="room-selector" room-id="${room.number}">
+        <th>${room.number}</th>
+        <th>${room.roomType}</th>
+        <th>${room.bidet}</th>
+        <th>${room.bedSize}</th>
+        <th>${room.numBeds}</th>
+        <th>${room.costPerNight}</th>
+      </tr>`
+    )
+    $('.av-room-search-disp').append(vacRooms);
+  },
+
+  displayTodayOrders(orders) {
+    $('.today-service-disp').empty();
+    let ordersTable =
+      `<tr>
+      <th>Order</th>
+      <th>Food</th>
+      <th>Cost</th>
+    </tr>`
+    if (orders) {
+      orders.forEach(order =>
+        ordersTable +=
+      `<tr class="order-selector" order-id="${order.number}">
+        <th>${order.date}</th>
+        <th>${order.food}</th>
+        <th>${order.totalCost}</th>
+      </tr>`
+      )
+    }
+    $('.today-service-disp').append(ordersTable);
+  },
+
 
 
 }
