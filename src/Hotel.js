@@ -78,6 +78,14 @@ class Hotel {
     }, [])
   }
 
+  getRoomServicesByDay(day) {
+    if (day) {
+      return this.roomServices.filter(service => service.date === day)
+    } else {
+      return this.roomServices.filter(service => service.date === this.currentDay)
+    }
+  }
+
   getRoomServiceRevToday() {
     let todayService = this.roomServices.filter(service => {
       return service.date === this.currentDay
@@ -95,6 +103,11 @@ class Hotel {
     return this.customers[customerId - 1]
   }
 
+  bookRoom(roomNumber, date, customer) {
+
+    this.bookingDb
+  }
+
   hotelPrepHandler() {
     this.getCurrDay();
     this.createMenu()
@@ -102,6 +115,9 @@ class Hotel {
     this.instBookings();
   }
 
+  selectRoomByNum(num) {
+    return this.rooms
+  }
 
 
 }
