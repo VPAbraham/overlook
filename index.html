@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Istok+Web&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya&display=swap" rel="stylesheet">
+    <title>Overlook</title>
+  </head>
+  <body>
+
+<!-- MODAL POPUP -->
+
+    <div class="modal-start">
+      <h2>Welcome to Overlook Hotel Management</h2>
+      <button class="start-hotel-button">Go to Your Hotel</button>
+    </div>
+    <div class="modal-backdrop">
+    </div>
+    <div class="subheader">
+    </div>
+
+<!-- MODAL POPUP END -->
+
+<!-- UI-TABS -->
+
+    <div id="ui-tabs" class="ui-widget">
+      <ul id="tab-btn-container">
+        <li class="tab-selector"><a href="#dboard-tab">Home</a></li>
+        <li class="tab-selector"><a href="#customer-tab">Customers</a></li>
+        <li class="tab-selector"><a href="#rooms-tab">Rooms</a></li>
+        <li class="tab-selector"><a href="#orders-tab">Orders</a></li>
+      </ul>
+      <header class="page-header">
+        <span>  
+          <h1>Overlook</h1>
+          <h4>the leader in hotel booking services</h4>
+        </span>
+        <div class="customer-selected-display"></div>
+      </header>
+
+<!-- DASHBOARD TAB -->
+
+      <div id="dboard-tab" class="style-tabs">
+        <div id="dboard-accordion"> Overview
+          <h3><a href="#">General Information</a></h3>
+          <div class="gen-info">
+            <div class ="gen-info-stats info-block">
+              <ul>
+                <li class="date">Today is <span class="date-display"></span></li>
+                <li><span class="percent-rooms-av"></span></li>
+                <li><span class="daily-book-rev"></span></li>
+                <li><span class="daily-service-rev"></span></li>                
+              </ul>
+            </div> 
+            <div class="curr-reserved">
+              <h6>Rooms currently available:</h6>
+              <span class= 'av-rooms'></span>
+            </div>
+            <div class="curr-reserved">
+              <h6>Rooms currently reserved:</h6>
+              <span class='res-rooms'></span>
+            </div>
+           </div>
+        </div>
+      </div>
+  
+<!-- CUSTOMER TAB -->
+
+      <div id="customer-tab" class="style-tabs">
+        <header>Customer Info</header>
+        <section>
+          <div class="customer-search">
+            <p class="cust-search-header cust-blurb">Customer search:</p>
+            <input class="cust-search-input cust-input" placeholder="enter customer name">
+            <button class="clear-customer-button">Clear Customer Selection</button>
+            <article class="customer-search-display">
+            </article>
+          </div>
+          <div class="customer-add">
+            <p class="cust-add-header cust-blurb">Add a customer:</p>
+            <input class="cust-add-input cust-input" placeholder="enter new customer name">
+            <button class="cust-add-button">Add new customer</button>
+            <article class="new-cust-display"></article>
+          </div>
+        </section>
+      </div>
+
+<!-- ROOMS TAB -->
+
+      <div id="rooms-tab" class="style-tabs">
+        <section class="rooms-content">
+          <section class="room-disp-1">
+            <article class="most-booked"></article>
+            <article class="least-booked"></article>
+          </section>
+          <article class="rooms-container">  
+            <div class="find-rooms-block">
+              <p>View available rooms for a selected date:</p>
+              <p>
+              Date: 
+                <input type="text" id="datepicker"  class="room-av-datepicker">
+              </p>
+              <button class="date-room-button">Search rooms</button>
+              <button class="book-room-button">Book this room</button>
+              <p class="room-error">Please chose a room</p>
+              <table class="av-room-search-disp">
+              </table>
+            </div>
+            <div class="all-cust-bookings">
+              <p class="all-cust-heading">All-time bookings for selected customer</p>
+              <table class="all-cust-display">
+              </table>
+            </div>
+          </article>
+        </section>
+      </div>
+      
+<!-- ORDERS TAB -->
+
+      <div id="orders-tab" class="style-tabs">
+        <section class="orders-content">
+          <p>View room service data for a selected date:</p>
+          <p>
+            Date:
+            <input type="text" id="datepicker-2" class="order-datepicker" autocomplete="new-password" >
+            <button class="search-orders-button">Search Orders</button>
+          </p>
+          <section class="order-table-container">
+            <div class="today-orders">
+              <p>Today's Total Room Service Orders</p>
+              <table class="today-service-disp">
+              </table>
+              <p>Chose a date to browse order data.</p>
+            </div>
+          <div class="today-cust-orders">
+            <p>Selected Date's Orders for <span class="orders-alias-1">Selected Customer</span></p>
+            <table class="today-cust-disp">
+            </table>
+            <p>Select a Customer to view data</p>
+          </div>
+          <div class="all-cust-orders">
+            <p>All-time Orders for <span class="orders-alias-1">Selected Customer</span></p>
+            <table class="all-cust-disp">
+            </table>
+            <p>Select a Customer to view data</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  <script type="text/javascript" src="main.bundle.js"></script></body>
+</html>
