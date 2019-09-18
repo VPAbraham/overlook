@@ -18,11 +18,6 @@ describe('Hotel', () => {
 
   it('should be able to store data from datasets', () => {
     expect(data).to.be.an('object');
-    expect(hotel.users).to.be.an('array');
-    expect(hotel.rooms).to.be.an('array');
-    expect(hotel.bookings).to.be.an('array');
-    expect(hotel.roomServices).to.be.an('array');
-    expect(hotel.customers).to.be.an('array');
   });
 
   it('should be able to store users from datasets', () => {
@@ -99,5 +94,12 @@ describe('Hotel', () => {
     expect(hotel.getRoomServiceRevToday()).to.equal(0);
   })
 
+   it('should be able to get room service revenue for the current day', () => {
+    expect(hotel.getRoomServiceRevToday()).to.equal(0);
+  })
+
+ it('should be able to add new customers', () => {
+    expect(hotel.addCustomer('Victor Abraham').id).to.equal(21)
+  })
 
 });
