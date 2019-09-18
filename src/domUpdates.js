@@ -1,10 +1,5 @@
 import $ from 'jquery';
 import Hotel from './Hotel';
-// import 'jquery-ui-bundle';
-// import './css/base.scss';
-// import Hotel from '../src/Hotel.js';
-// import Bookings from '../src/Bookings.js';
-// import Customer from '../src/Customer.js';
 
 const domUpdates = {
 

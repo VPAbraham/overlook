@@ -114,7 +114,6 @@ class Hotel {
   }
 
   bookRoom(date) {
-    console.log(date)
     let newBooking = {
       'userID': this.selectedCustomer.id,
       'date': date,
