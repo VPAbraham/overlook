@@ -1,10 +1,7 @@
-// This is the JavaScript entry file - your code begins here
 import $ from 'jquery';
 import 'jquery-ui-bundle';
 import './css/base.scss';
 import Hotel from '../src/Hotel.js';
-import Bookings from '../src/Bookings.js';
-import Customer from '../src/Customer.js';
 import domUpdates from './domUpdates';
 
 // <-- FETCH -->
@@ -124,9 +121,7 @@ $(document).ready(() => {
       hotel.selectedRoom = chosenRoom;
       console.log(hotel.bookingDb)
     }
-  }),
-
-
+  });
 
   $('.search-orders-button').on('click', () => {
     console.log(hotel)
@@ -143,7 +138,7 @@ $(document).ready(() => {
       $('.orders-alias-1').text(`${hotel.selectedCustomer.name}`)
     }
     console.log(hotel.getRoomServicesByDay(selectedDate))
-  })
+  });
 
   $('.book-room-button').on('click', () => {
     console.log($('#datepicker').val())
@@ -157,7 +152,7 @@ $(document).ready(() => {
     if (!hotel.selectedRoom) {
       $('.room-error').css('visibility', 'visible')
     }
-  })
+  });
 
 
 });

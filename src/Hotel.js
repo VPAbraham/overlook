@@ -1,6 +1,5 @@
 import Customer from './Customer.js';
 import Bookings from './Bookings.js'
-import domUpdates from './domUpdates.js';
 
 class Hotel {
   constructor(userData, roomData, bookingData, roomServiceData) {

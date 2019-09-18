@@ -73,6 +73,7 @@ a {
     -webkit-appearance: none;
     width: 7px;
 }
+
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
@@ -84,6 +85,7 @@ a {
   border: 2px solid black;
   border-radius: 4px;
 }
+
 .page-header {
   background-color: $tan;
   color: black;
@@ -93,13 +95,12 @@ a {
   height: 11vh;
   border-bottom: 2px solid rgb(0, 0, 0);
 
-  span{
+  span {
     width: 66vw;
 
     h1 {
       font-family: $header-font;
       font-size: 3em;
-      
     }
     
     h4 {
@@ -169,12 +170,10 @@ a {
       color: white;
     }
 
-    a:hover {
-      
-    }
     a:active {
       color: white;
     } 
+
     a:visited {
       color: white;
     } 
@@ -214,14 +213,15 @@ a {
 
         li {
           margin: 1em 0;
-          text-align: left;
-          
+          text-align: left; 
         }
+
       }
 
       a {
         float: left;
       }
+
       a:link {
       color: white;
       }
@@ -229,9 +229,11 @@ a {
       a:hover {
         color: #ed8a63;
       }
+
       a:active {
       color: white;
       } 
+
       a:visited {
       color: white;
       }
@@ -261,7 +263,7 @@ a {
         min-width: 160px;
       }
 
-      h6{
+      h6 {
         font-size: 1em;
         text-align: left;
         background: grey;
@@ -279,6 +281,7 @@ a {
 
       .table-items {
         border-bottom: 1px dotted lightgrey;
+        font-size: 1.1em;
         margin-left: 10px;
       }
 
@@ -379,10 +382,9 @@ a {
       .search-resp:hover {
         background: lightgray;
       }
-      
-
 
     }
+
     .customer-add{
 
       .cust-add-button {
@@ -394,6 +396,7 @@ a {
         color: black;
         font-size: 1.9em;
       }
+
     }
 
     
@@ -441,8 +444,6 @@ a {
         .booking-history {
           border-bottom: 1px solid black;
         }
-
-        
 
         .av-room-search-disp,
         .all-cust-display {
@@ -526,9 +527,4 @@ h5 {
   color: rgb(22, 5, 5);
 }
 
-.dropdown {
-  width: 100px;
-  height: 40px;
-  font-size: 16px;
-  background-color: white;
-}
+
