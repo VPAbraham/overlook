@@ -124,6 +124,7 @@ const domUpdates = {
   },
 
   displayUserBookings(bookings) {
+    $('.all-cust-display').empty()
     let bookingTable = 
     `<tr>
       <th>Room Number</th>

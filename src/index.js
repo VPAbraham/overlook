@@ -82,6 +82,8 @@ $(document).ready(() => {
     let userBookings = hotel.bookingDb.returnUserBookingsById(hotel.selectedCustomer.id)
     domUpdates.displayUserBookings(userBookings);
     let currentBooking = hotel.selectedCustomer.getCurrentBooking();
+    console.log(hotel.selectedCustomer.getAllRoomServices())
+    domUpdates.displayTodayOrders(hotel.selectedCustomer.getAllRoomServices(), $('.all-cust-disp'))
     if (currentBooking) {
       hotel.selectedRoom = hotel.bookingDb.getRoom(currentBooking.roomNumber)
     } 
