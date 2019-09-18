@@ -8,7 +8,6 @@ describe('Customer', () => {
   let hotel;
   beforeEach(() => {
     hotel = new Hotel(data, data, data, data)
-    hotel.hotelPrepHandler()
   });
 
   it('should be a function that will instantiate customers', () => {
