@@ -28,4 +28,4 @@ Overlook is a hotel management app that uses mock data to simulate the every day
 
 2. Run these by entering `npm test`.
 
-![App in action](http://www.giphy.com/gifs/jUQNH4juZi4wg0X96j)
+![App in action](https://giphy.com/gifs/jUQNH4juZi4wg0X96j/html5)
