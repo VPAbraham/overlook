@@ -1,15 +1,15 @@
-$header-font: 'Lora', serif;
-$subheader-font: 'Istok Web', sans-serif;
-$body-font: 'Alegreya', serif;
-$tan: #d7cec7;
-$slate: rgba(54, 52, 52, 0.849);
-$kreme: #ed8a63;
-$brown: #c4af93;
-$sky: #caebf2;
-$carbon: #a9a9a9;
-$watermelon: #ff3b3f;
-$neutral: #efefef;
 $background: rgb(226, 226, 255);
+$body-font: 'Alegreya', serif;
+$brown: #c4af93;
+$carbon: #a9a9a9;
+$header-font: 'Lora', serif;
+$kreme: #ed8a63;
+$neutral: #efefef;
+$sky: #caebf2;
+$slate: rgba(54, 52, 52, 0.849);
+$subheader-font: 'Istok Web', sans-serif;
+$tan: #d7cec7;
+$watermelon: #ff3b3f;
 
 
 
@@ -21,8 +21,8 @@ $background: rgb(226, 226, 255);
 }
 
 body {
-  position: relative;
   font-family: $subheader-font;
+  position: relative;
 }
 
 a { 
@@ -30,19 +30,19 @@ a {
 }
 
 .modal-start {
-  position: absolute;
-  z-index: 3000;
   background-color: $slate;
-  height: 40vh;
-  width: 60vw;
-  border: 3px solid $sky;
-  margin: auto;
   border-radius: 8px;
+  border: 3px solid $sky;
+  bottom: 0;
+  height: 40vh;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
   text-align: center;
   top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  width: 60vw;
+  z-index: 3000;
 
   h2 {
     color: $sky;
@@ -51,49 +51,49 @@ a {
   }
 
   button {
-    width: 12vw;
-    height: 7vh;
+    background: lightgray;
     border-radius: 5px;
     font-family: $subheader-font;
-    background: lightgray;
     font-size: 1em;
+    height: 7vh;
+    width: 12vw;
   }
 }
 
 .modal-backdrop {
-  height: 100vh;
-  width: 100vw;
   background-color: black;
+  height: 100vh;
   opacity: .8;
   position: fixed;
+  width: 100vw;
   z-index: 2000;
 }
 
 ::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 7px;
+  -webkit-appearance: none;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(0,0,0,.5);
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  background-color: rgba(0,0,0,.5);
+  border-radius: 4px;
 }
 
 #ui-datepicker-div {
   background: $carbon;
-  border: 2px solid black;
   border-radius: 4px;
+  border: 2px solid black;
 }
 
 .page-header {
   background-color: $tan;
-  color: black;
-  font-weight: 700;
-  display: flex;
-  width: 100%;
-  height: 11vh;
   border-bottom: 2px solid rgb(0, 0, 0);
+  color: black;
+  display: flex;
+  font-weight: 700;
+  height: 11vh;
+  width: 100%;
 
   span {
     width: 66vw;
@@ -108,48 +108,45 @@ a {
     }
   }
   .customer-selected-display {
-    font-size: 1.8em;
     color: $kreme;
+    font-size: 1.8em;
   }
 }
 
 // TAB CONTAINER & HEADER
 
 #ui-tabs {
-  width: 100%;
-  height: 100vh;
+  background: $background;
   display: flex;
   flex-direction: column;
-  background: $background;
+  height: 100vh;
+  width: 100%;
 
 
   #tab-btn-container {
-    display: flex;
-    list-style: none;
-    width: 100%;
-
-    font-family: $subheader-font;
     align-items: center;
-    padding: 0;
     background-color: $neutral;
+    display: flex;
+    font-family: $subheader-font;
+    list-style: none;
+    padding: 0;
+    width: 100%;
 
 
     li {
-      text-align: center;
+      background: $slate;
+      border-left: 1px solid rgb(0, 0, 0);
+      color: black;
       font-size: 1.2em;
       font-weight: 700;
-      color: black;
-      background: $slate;
-      // border-radius: 3px;
       justify-content: space-evenly;
-      width: 25%;
-      transition: all .2s ease-in-out, box-shadow .3s; 
+      text-align: center;
       text-decoration: none;
-      border-left: 1px solid rgb(0, 0, 0);
+      transition: all .2s ease-in-out, box-shadow .3s; 
+      width: 25%;
     }
     
     li:hover {
-      // transform: scale(1.1);
       background:rgb(94, 128, 201);
       box-shadow: 0 2px 1px #777; 
     }
@@ -183,32 +180,32 @@ a {
   // DASHBOARD TAB
 
   #dboard-tab {
-    background: rgb(226, 226, 255);
     background-repeat: no-repeat;
+    background: rgb(226, 226, 255);
     text-align: center;
 
     #dboard-accordion {
-      width: 90%;
-      margin: auto;
-      height: 40px;
       background-color: rgba(54, 52, 52, 0.849);
+      border-radius: 10px;
       color: white;
       font-size: 1.7em;
-      border-radius: 10px;
+      height: 40px;
+      margin: auto;
+      width: 90%;
 
       h3 {
-        height: 8vh;
         background-color: $brown;
-        font-family: $body-font;
-        font-size: 1.3em;
         border-bottom: 2.5px solid rgb(197, 197, 197);
         border-radius: 2px 0;
+        font-family: $body-font;
+        font-size: 1.3em;
+        height: 8vh;
       }
 
       .gen-info {
         border-radius: 0 0 10px 10px;
-        height: 382.5px;
         display: flex;
+        height: 382.5px;
         justify-content: space-evenly;
 
         li {
@@ -223,7 +220,7 @@ a {
       }
 
       a:link {
-      color: white;
+        color: white;
       }
 
       a:hover {
@@ -231,52 +228,52 @@ a {
       }
 
       a:active {
-      color: white;
+       color: white;
       } 
 
       a:visited {
-      color: white;
+        color: white;
       }
 
       .gen-info-stats {
+        background: white;
+        border: 1px solid black;
         display: inline-block;
         float: left;
-        overflow-y: scroll;
-        background: white;
-        width: 25%;
-        margin: .5em;
-        border: 1px solid black;
         height: 90%;
+        margin: .5em;
+        overflow-y: scroll;
+        width: 25%;
       }
       
       .curr-reserved {
-        margin: .5em;
-        height: 90%;
-        width: 20%;
-        overflow-y: scroll;
         background: white;
-        border: solid 1px grey;
         border-radius: 3px;
+        border: solid 1px grey;
         display: inline-block;
         float: left;
+        height: 90%;
+        margin: .5em;
         max-width: 200px;
         min-width: 160px;
+        overflow-y: scroll;
+        width: 20%;
       }
 
       h6 {
+        background: grey;
+        border-radius: 2px;
+        border: 2px solid $carbon;
         font-size: 1em;
         text-align: left;
-        background: grey;
-        border: 2px solid $carbon;
-        border-radius: 2px;
       }
 
       .res-rooms,
       .av-rooms {
-        text-align: left;
-        font-size: 1.3em;
         display: flex;
         flex-direction: column;
+        font-size: 1.3em;
+        text-align: left;
       }
 
       .table-items {
@@ -287,9 +284,9 @@ a {
 
       div {
         background-color: rgb(252, 250, 250);
-        height: 50vh;
-        font-family: $subheader-font;
         color: black;
+        font-family: $subheader-font;
+        height: 50vh;
       }
 
     }
@@ -297,14 +294,14 @@ a {
   }
 
   .style-tabs {
-    color: $neutral;
     background-position: center 3px;
-    padding-top: 40px;
-    font-weight: bold;
+    color: $neutral;
     font-size: 12px;
+    font-weight: bold;
+    height: 100%;
+    padding-top: 40px;
     text-align: center;
     width: 100%;
-    height: 100%;
   }
 
   // CUSTOMER TAB
@@ -317,60 +314,59 @@ a {
     }
 
     .cust-input { 
-      width: 75%;
+      border-radius: 5px;
+      display: block;
+      font-family: $body-font;
       font-size: 1.8em;
       height: 2.8em;
-      border-radius: 5px;
-      font-family: $body-font;
-      display: block;
       margin: auto;
+      width: 75%;
     }
 
     section {
-      width: 90vw;
-      height: 74vh;
       background: $neutral;
-      display: flex;
-      margin: auto;
-      justify-content: space-evenly;
       border-radius: 0 0 9px 9px;
+      display: flex;
+      height: 74vh;
+      justify-content: space-evenly;
+      margin: auto;
+      width: 90vw;
 
     }
     header {
-      font-size: 2.5em;
-      width: 90vw;
-      margin: auto;
-      color: white;
-      height: 8%;
-      font-family: $body-font;
       background: $slate;
       border-radius: 15px 15px 0 0;
+      color: white;
+      font-family: $body-font;
+      font-size: 2.5em;
+      height: 8%;
+      margin: auto;
+      width: 90vw;
     }
 
     div {
-      display: inline-block;
-      width: 45%;
-      height: 70vh;
       background: #fcfafa;
       border-radius: 0 0 15px 15px;
-      // margin: auto;
       border: 2px solid rgb(141, 137, 137);
+      display: inline-block;
+      height: 70vh;
+      width: 45%;
     }
     
     .customer-search {
 
       .customer-search-display {
+        background: $neutral;
+        border-radius: 5px;
+        border: solid 1px black;
+        color: black;
+        display: block;
         height: 50vh;
-        margin: auto;
         margin-top: 10px;
-        width: 85%;
+        margin: auto;
         overflow-y: scroll;
         text-align: left;
-        border-radius: 5px;
-        background: $neutral;
-        display: block;
-        color: black;
-        border: solid 1px black;
+        width: 85%;
       }
 
       .search-resp{
@@ -388,8 +384,8 @@ a {
     .customer-add{
 
       .cust-add-button {
-        width: 55%;
         margin: 12px;
+        width: 55%;
       }
 
       .new-cust-display {
@@ -406,10 +402,10 @@ a {
     font-size: 1em;
 
     .rooms-content {
-      width: 100%;
-      height: 75vh;
-      border: 2px solid $slate;
       background: $neutral;
+      border: 2px solid $slate;
+      height: 75vh;
+      width: 100%;
 
       .most-booked,
       .least-booked {
@@ -424,19 +420,19 @@ a {
 
       .find-rooms-block,
       .all-cust-bookings {
+        border-radius: 5px;
         border: 2px solid black;
         width: 25vw;
-        border-radius: 5px;
         
         .all-cust-heading {
           position: relative;
         }
 
         .room-error {
+          color: red;
           display: inline;
           float: right;
           position: absolute;
-          color: red;
           visibility: hidden;
         }
 
@@ -447,11 +443,11 @@ a {
 
         .av-room-search-disp,
         .all-cust-display {
-          overflow-y: scroll;          
+          background: #8d8989;
           display: block;
           font-size: .8em;
           height: 50vh;
-          background: #8d8989;
+          overflow-y: scroll;          
 
 
           th {
@@ -466,12 +462,12 @@ a {
     font-size: 1.1em;
 
     .orders-content {
-      width: 100%;
-      height: 70vh;
-      border: 2px solid $slate;
       background: $neutral;
+      border: 2px solid $slate;
       color: black;
       font-size: .9em;
+      height: 70vh;
+      width: 100%;
 
       .order-table-container {
         display: flex;
@@ -488,43 +484,40 @@ a {
       }
 
       table {
-         overflow-y: scroll;          
-          display: block;
-          height: 20vh;
-          width: 100%;
-          margin: 0 0 30px 0;
-          background: #8d8989;
-          border: solid 1px black;
+        background: #8d8989;
+        border: solid 1px black;
+        display: block;
+        height: 20vh;
+        margin: 0 0 30px 0;
+        width: 100%;
+        overflow-y: scroll;          
 
         tr {
-        display: flex;
-        justify-content: space-evenly;
-        border-bottom: 1px solid lightgray;
+          border-bottom: 1px solid lightgray;
+          display: flex;
+          justify-content: space-evenly;
         }
       }
-
-      
 
       .today-orders, 
       .today-cust-orders, 
       .all-cust-orders {
-        border: 2px solid black;
-        width: 25vw;
         border-radius: 5px;
-        height: 100%;
+        border: 2px solid black;
         display: inline-block;
+        height: 100%;
         margin-top: 7%;
+        width: 25vw;
       }
     }
   } 
 
-
 }
 
 h5 {
+  color: rgb(22, 5, 5);
   font-family: $body-font;
   font-size: 3em;
-  color: rgb(22, 5, 5);
 }
 
 
