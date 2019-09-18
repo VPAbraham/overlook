@@ -448,6 +448,7 @@ a {
         .all-cust-display {
           overflow-y: scroll;          
           display: block;
+          font-size: .8em;
           height: 50vh;
           background: #8d8989;
 
@@ -455,7 +456,6 @@ a {
           th {
             margin: 0 5px;
           }
-
         }
       }
     }

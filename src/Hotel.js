@@ -106,8 +106,8 @@ class Hotel {
   hotelPrepHandler() {
     this.getCurrDay();
     this.createMenu()
-    this.instCustomers();
     this.instBookings();
+    this.instCustomers();
   }
 
   selectRoomByNum() {
