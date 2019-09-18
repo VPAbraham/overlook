@@ -102,8 +102,8 @@ const domUpdates = {
     $('.av-room-search-disp').append(vacRooms);
   },
 
-  displayTodayOrders(orders) {
-    $('.today-service-disp').empty();
+  displayTodayOrders(orders, elem) {
+    elem.empty();
     let ordersTable =
       `<tr>
       <th>Order</th>
@@ -120,8 +120,27 @@ const domUpdates = {
       </tr>`
       )
     }
-    $('.today-service-disp').append(ordersTable);
+    elem.append(ordersTable);
   },
+
+  displayUserBookings(bookings) {
+    $('.all-cust-display').empty()
+    let bookingTable = 
+    `<tr>
+      <th>Room Number</th>
+      <th>Date</th>
+      <th>     </th>
+    </tr>`
+    bookings.forEach(booking => 
+      bookingTable += 
+      `<tr class="booking-history" booking-id="${bookings[booking]}">
+        <th>${booking.roomNumber}</th>
+        <th>${booking.date}</th>
+        <th><button>UNBOOK</button></th>
+      </tr>`
+    )
+    $('.all-cust-display').append(bookingTable);
+  }
 
 
 

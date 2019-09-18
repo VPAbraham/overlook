@@ -73,6 +73,7 @@ a {
     -webkit-appearance: none;
     width: 7px;
 }
+
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
@@ -84,6 +85,7 @@ a {
   border: 2px solid black;
   border-radius: 4px;
 }
+
 .page-header {
   background-color: $tan;
   color: black;
@@ -93,18 +95,21 @@ a {
   height: 11vh;
   border-bottom: 2px solid rgb(0, 0, 0);
 
-  span{
+  span {
     width: 66vw;
 
     h1 {
       font-family: $header-font;
       font-size: 3em;
-      
     }
     
     h4 {
       font-family: $subheader-font;
     }
+  }
+  .customer-selected-display {
+    font-size: 1.8em;
+    color: $kreme;
   }
 }
 
@@ -165,12 +170,10 @@ a {
       color: white;
     }
 
-    a:hover {
-      
-    }
     a:active {
       color: white;
     } 
+
     a:visited {
       color: white;
     } 
@@ -210,14 +213,15 @@ a {
 
         li {
           margin: 1em 0;
-          text-align: left;
-          
+          text-align: left; 
         }
+
       }
 
       a {
         float: left;
       }
+
       a:link {
       color: white;
       }
@@ -225,9 +229,11 @@ a {
       a:hover {
         color: #ed8a63;
       }
+
       a:active {
       color: white;
       } 
+
       a:visited {
       color: white;
       }
@@ -257,7 +263,7 @@ a {
         min-width: 160px;
       }
 
-      h6{
+      h6 {
         font-size: 1em;
         text-align: left;
         background: grey;
@@ -275,6 +281,7 @@ a {
 
       .table-items {
         border-bottom: 1px dotted lightgrey;
+        font-size: 1.1em;
         margin-left: 10px;
       }
 
@@ -375,10 +382,9 @@ a {
       .search-resp:hover {
         background: lightgray;
       }
-      
-
 
     }
+
     .customer-add{
 
       .cust-add-button {
@@ -390,37 +396,74 @@ a {
         color: black;
         font-size: 1.9em;
       }
+
     }
 
     
   }
   #rooms-tab {
     color: black;
+    font-size: 1em;
 
     .rooms-content {
       width: 100%;
-      height: 70vh;
+      height: 75vh;
       border: 2px solid $slate;
       background: $neutral;
 
-      .find-rooms-block {
+      .most-booked,
+      .least-booked {
+        font-size: 1.3em;
+        margin: 8px 0;
+      }
+      
+      .rooms-container {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .find-rooms-block,
+      .all-cust-bookings {
         border: 2px solid black;
-        margin: 1.5em;
         width: 25vw;
         border-radius: 5px;
+        
+        .all-cust-heading {
+          position: relative;
+        }
 
-        .av-room-search-disp {
+        .room-error {
+          display: inline;
+          float: right;
+          position: absolute;
+          color: red;
+          visibility: hidden;
+        }
+
+        .room-selector, 
+        .booking-history {
+          border-bottom: 1px solid black;
+        }
+
+        .av-room-search-disp,
+        .all-cust-display {
           overflow-y: scroll;          
           display: block;
-          height: 40vh;
+          font-size: .8em;
+          height: 50vh;
           background: #8d8989;
 
+
+          th {
+            margin: 0 5px;
+          }
         }
       }
     }
   }
 
   #orders-tab {
+    font-size: 1.1em;
 
     .orders-content {
       width: 100%;
@@ -428,12 +471,18 @@ a {
       border: 2px solid $slate;
       background: $neutral;
       color: black;
-      font-size: 1.1em;
+      font-size: .9em;
+
+      .order-table-container {
+        display: flex;
+        height: 30vh;
+        justify-content: space-evenly;
+        margin: auto;
+      }
 
       .general-orders {
         display: flex;
         font-size: 1.3em;
-        flex-direction: column;
         height: 20vh;
         width: 50%;
       }
@@ -441,16 +490,30 @@ a {
       table {
          overflow-y: scroll;          
           display: block;
-          height: 40vh;
+          height: 20vh;
           width: 100%;
+          margin: 0 0 30px 0;
           background: #8d8989;
+          border: solid 1px black;
+
+        tr {
+        display: flex;
+        justify-content: space-evenly;
+        border-bottom: 1px solid lightgray;
+        }
       }
 
-      .general-orders {
+      
+
+      .today-orders, 
+      .today-cust-orders, 
+      .all-cust-orders {
         border: 2px solid black;
-        margin: 1.5em;
         width: 25vw;
         border-radius: 5px;
+        height: 100%;
+        display: inline-block;
+        margin-top: 7%;
       }
     }
   } 
@@ -464,9 +527,4 @@ h5 {
   color: rgb(22, 5, 5);
 }
 
-.dropdown {
-  width: 100px;
-  height: 40px;
-  font-size: 16px;
-  background-color: white;
-}
+

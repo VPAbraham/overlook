@@ -1,6 +1,5 @@
 import Customer from './Customer.js';
 import Bookings from './Bookings.js'
-import domUpdates from './domUpdates.js';
 
 class Hotel {
   constructor(userData, roomData, bookingData, roomServiceData) {
@@ -12,7 +11,7 @@ class Hotel {
     this.roomServices = roomServiceData.roomServices;
     this.customers = [];
     this.bookingDb;
-    this.selectedCustomer;
+    this.selectedCustomer = undefined;
     this.selectedRoom;
     this.hotelPrepHandler()
   }
@@ -103,20 +102,26 @@ class Hotel {
     return this.customers[customerId - 1]
   }
 
-  bookRoom(roomNumber, date, customer) {
-
-    this.bookingDb
-  }
-
   hotelPrepHandler() {
     this.getCurrDay();
     this.createMenu()
-    this.instCustomers();
     this.instBookings();
+    this.instCustomers();
   }
 
-  selectRoomByNum(num) {
+  selectRoomByNum() {
     return this.rooms
+  }
+
+  bookRoom(date) {
+    console.log(date)
+    let newBooking = {
+      'userID': this.selectedCustomer.id,
+      'date': date,
+      'roomNumber': this.selectedRoom.number,
+      'customBooked': true
+    }
+    this.bookingDb.bookings.push(newBooking);
   }
 
 

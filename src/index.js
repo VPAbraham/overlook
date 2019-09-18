@@ -1,10 +1,7 @@
-// This is the JavaScript entry file - your code begins here
 import $ from 'jquery';
 import 'jquery-ui-bundle';
 import './css/base.scss';
 import Hotel from '../src/Hotel.js';
-import Bookings from '../src/Bookings.js';
-import Customer from '../src/Customer.js';
 import domUpdates from './domUpdates';
 
 // <-- FETCH -->
@@ -40,7 +37,7 @@ $(document).ready(() => {
     domUpdates.displayReservedRooms(hotel.bookingDb.getCurrentlyBooked())
     domUpdates.displayAvailableRooms(hotel.bookingDb.getCurrentlyAvailable())
     domUpdates.displayPercentRoomsAvailable(hotel.bookingDb.getPercentRoomsAvailable())
-    domUpdates.displayTodayOrders(hotel.getRoomServicesByDay())
+    domUpdates.displayTodayOrders(hotel.getRoomServicesByDay(), $('.today-service-disp'))
     domUpdates.displayTotalBookingRev(hotel.bookingDb.getBookingRevToday())
     domUpdates.displayTotalRoomServiceRev(hotel.getRoomServiceRevToday())
     domUpdates.displayMostBooked(hotel.bookingDb.getPopularBookingDate(), hotel.bookingDb.getUnpopularBookingDate())
@@ -72,21 +69,25 @@ $(document).ready(() => {
     $('.cust-search-input').val('');
     $('.customer-search-display').empty();
     $('.book-room-button').attr("disabled", true);
+    $('.orders-alias-1').text('selected customer')
   });
-
-  function arrangeForSelectedCustomer() {
-  }
 
   $('.customer-search-display').on('click', '.retr-name', (e) => {
     $('.book-room-button').attr("disabled", false);
     let selectedUser = $(e.target).attr('data-id')
     hotel.selectedCustomer = hotel.getCustomerByName(selectedUser);
+    let userBookings = hotel.bookingDb.returnUserBookingsById(hotel.selectedCustomer.id)
+    domUpdates.displayUserBookings(userBookings);
     let currentBooking = hotel.selectedCustomer.getCurrentBooking();
+    console.log(hotel.selectedCustomer.getAllRoomServices())
+    domUpdates.displayTodayOrders(hotel.selectedCustomer.getAllRoomServices(), $('.all-cust-disp'))
     if (currentBooking) {
       hotel.selectedRoom = hotel.bookingDb.getRoom(currentBooking.roomNumber)
-    }
+    } 
     $('.customer-selected-display').text(`Currently selected: ${selectedUser}`)
     console.log(hotel.selectedCustomer)
+    console.log(hotel.selectedRoom)
+
   });
 
 
@@ -96,12 +97,15 @@ $(document).ready(() => {
       let newName = $('.cust-add-input').val();
       $('.cust-add-input').val('');
       hotel.selectedCustomer = hotel.addCustomer(newName);
+      console.log(hotel.selectedCustomer)
+      console.log(hotel)
       $('.new-cust-display').text(`You have added: ${newName}`)
       $('.customer-selected-display').text(`Currently selected: ${newName}`)
     }
   })
 
   $('.date-room-button').on('click', () => {
+    $('.room-error').css('visibility', 'hidden')
     let date = $('#datepicker').val();
     console.log(date)
     let rooms = hotel.bookingDb.getCurrentlyAvailable(date);
@@ -109,24 +113,46 @@ $(document).ready(() => {
   })
 
   $('.av-room-search-disp').on('click', '.room-selector', (e) => {
+    $('.book-room-button').attr("disabled", false);
+    $('.room-error').css('visibility', 'hidden')
     if (hotel.selectedCustomer) {
       let roomNum = $(e.target).parent().attr('room-id');
-      console.log(roomNum)
-      console.log(hotel.selectRoomByNum(roomNum))
-      console.log(hotel)
-      hotel.selectedRoom = hotel.selectRoomByNum(roomNum)
-      console.log(hotel.selectedRoom)
+      let chosenRoom = hotel.rooms[parseInt(roomNum) - 1];
+      hotel.selectedRoom = chosenRoom;
+      console.log(hotel.bookingDb)
     }
-  }),
+  });
 
   $('.search-orders-button').on('click', () => {
+    console.log(hotel)
+    let selectedDate = $('.order-datepicker').val();
     if ($('.order-datepicker').val() !== '') {
-      let selectedDate = $('.order-datepicker').val();
-      domUpdates.displayTodayOrders(hotel.getRoomServicesByDay(selectedDate))
-      console.log(hotel.getRoomServicesByDay(selectedDate))
+      domUpdates.displayTodayOrders(hotel.getRoomServicesByDay(selectedDate), $('.today-service-disp'));
     } 
-  })
+    if (hotel.selectedCustomer) {
+      let custServices = hotel.selectedCustomer.getRoomServicesByDate(selectedDate);
+      console.log(custServices)
+      if (custServices.length > 0) {
+        domUpdates.displayTodayOrders(custServices, $('.today-cust-disp'));
+      } else { $('.today-cust-disp').text('No orders made.')}
+      $('.orders-alias-1').text(`${hotel.selectedCustomer.name}`)
+    }
+    console.log(hotel.getRoomServicesByDay(selectedDate))
+  });
 
+  $('.book-room-button').on('click', () => {
+    console.log($('#datepicker').val())
+    if (hotel.selectedRoom && hotel.selectedCustomer) {
+      hotel.bookRoom($('#datepicker').val())
+      console.log(hotel.bookingDb.bookings)
+      console.log(hotel.bookingDb.returnUserBookingsById(hotel.selectedCustomer.id))
+      let userBookings = hotel.bookingDb.returnUserBookingsById(hotel.selectedCustomer.id)
+      domUpdates.displayUserBookings(userBookings);
+    }
+    if (!hotel.selectedRoom) {
+      $('.room-error').css('visibility', 'visible')
+    }
+  });
 
 
 });

@@ -24,7 +24,7 @@ describe('Hotel', () => {
 
   it('should be able to set the current day', () => {
     hotel.getCurrDay();
-    expect(hotel.currentDay).to.deep.equal('2019/09/14');
+    expect(hotel.currentDay).to.deep.equal('2019/09/18');
   });
   
   it('should be able to retrieve customer booking, room, and room service data', () => {
