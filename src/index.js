@@ -40,7 +40,7 @@ $(document).ready(() => {
     domUpdates.displayReservedRooms(hotel.bookingDb.getCurrentlyBooked())
     domUpdates.displayAvailableRooms(hotel.bookingDb.getCurrentlyAvailable())
     domUpdates.displayPercentRoomsAvailable(hotel.bookingDb.getPercentRoomsAvailable())
-    domUpdates.displayTodayOrders(hotel.getRoomServicesByDay())
+    domUpdates.displayTodayOrders(hotel.getRoomServicesByDay(), $('.today-service-disp'))
     domUpdates.displayTotalBookingRev(hotel.bookingDb.getBookingRevToday())
     domUpdates.displayTotalRoomServiceRev(hotel.getRoomServiceRevToday())
     domUpdates.displayMostBooked(hotel.bookingDb.getPopularBookingDate(), hotel.bookingDb.getUnpopularBookingDate())
@@ -84,7 +84,7 @@ $(document).ready(() => {
     let currentBooking = hotel.selectedCustomer.getCurrentBooking();
     if (currentBooking) {
       hotel.selectedRoom = hotel.bookingDb.getRoom(currentBooking.roomNumber)
-    }
+    } 
     $('.customer-selected-display').text(`Currently selected: ${selectedUser}`)
     console.log(hotel.selectedCustomer)
   });
@@ -120,9 +120,14 @@ $(document).ready(() => {
   }),
 
   $('.search-orders-button').on('click', () => {
+    console.log(hotel)
+    let selectedDate = $('.order-datepicker').val();
     if ($('.order-datepicker').val() !== '') {
-      let selectedDate = $('.order-datepicker').val();
-      domUpdates.displayTodayOrders(hotel.getRoomServicesByDay(selectedDate))
+      domUpdates.displayTodayOrders(hotel.getRoomServicesByDay(selectedDate), $('.today-service-disp'));
+      if (hotel.selectedCustomer) {
+        let custServices = hotel.selectedCustomer.getRoomServicesByDate(selectedDate);
+        domUpdates.displayTodayOrders(custServices, $('.today-cust-display'));
+      }
       console.log(hotel.getRoomServicesByDay(selectedDate))
     } 
   })

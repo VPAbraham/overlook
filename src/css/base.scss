@@ -106,6 +106,10 @@ a {
       font-family: $subheader-font;
     }
   }
+  .customer-selected-display {
+    font-size: 2em;
+    color: red;
+  }
 }
 
 // TAB CONTAINER & HEADER
@@ -433,7 +437,6 @@ a {
       .general-orders {
         display: flex;
         font-size: 1.3em;
-        flex-direction: column;
         height: 20vh;
         width: 50%;
       }
@@ -441,12 +444,22 @@ a {
       table {
          overflow-y: scroll;          
           display: block;
-          height: 40vh;
+          height: 20vh;
           width: 100%;
+          margin: 0 0 30px 0;
           background: #8d8989;
+          border: solid 1px black;
+
+        tr {
+        display: flex;
+        justify-content: space-evenly;
+        border-bottom: 1px solid lightgray;
+        }
       }
 
-      .general-orders {
+      
+
+      .today-orders {
         border: 2px solid black;
         margin: 1.5em;
         width: 25vw;

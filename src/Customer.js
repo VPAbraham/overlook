@@ -13,7 +13,9 @@ class Customer {
     return this.bookings.find(booking => booking.date === this.currentDate)
   }
 
-  
+  getRoomServicesByDate(date) {
+    return this.roomServices.filter(service => service.date === date)
+  }  
 
 }
 

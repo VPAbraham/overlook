@@ -102,8 +102,8 @@ const domUpdates = {
     $('.av-room-search-disp').append(vacRooms);
   },
 
-  displayTodayOrders(orders) {
-    $('.today-service-disp').empty();
+  displayTodayOrders(orders, elem) {
+    elem.empty();
     let ordersTable =
       `<tr>
       <th>Order</th>
@@ -120,7 +120,7 @@ const domUpdates = {
       </tr>`
       )
     }
-    $('.today-service-disp').append(ordersTable);
+    elem.append(ordersTable);
   },
 
 
