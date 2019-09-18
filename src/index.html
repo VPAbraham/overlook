@@ -126,20 +126,28 @@
             <input type="text" id="datepicker-2" class="order-datepicker" autocomplete="new-password" >
             <button class="search-orders-button">Search Orders</button>
           </p>
-          <article class="today-orders"> 
-            <div>
+          <section class="order-table-container">
+            <div class="today-orders">
               <p>Today's Total Room Service Orders</p>
               <table class="today-service-disp">
               </table>
+              <p>Chose a date to browse order data.</p>
             </div>
-            <div>
-              <p>Today's Orders for <span class="orders-alias-1">Selected Customer</span></p>
-              <table class="today-cust-disp">
-              </table>
-              </div>
-          </article>
-          <article class="cust-orders">
-          </article>
+            
+          <div class="today-cust-orders">
+            <p>Selected Date's Orders for <span class="orders-alias-1">Selected Customer</span></p>
+            <table class="today-cust-disp">
+            </table>
+            <p>Select a Customer to view data</p>
+          </div>
+
+          <div class="all-cust-orders">
+            <p>All-time Orders for <span class="orders-alias-1">Selected Customer</span></p>
+            <table class="today-cust-disp">
+            </table>
+            <p>Select a Customer to view data</p>
+          </div>
+
         </section>
       </div>
     </div>

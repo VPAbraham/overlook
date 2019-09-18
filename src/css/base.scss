@@ -107,8 +107,8 @@ a {
     }
   }
   .customer-selected-display {
-    font-size: 2em;
-    color: red;
+    font-size: 1.8em;
+    color: $kreme;
   }
 }
 
@@ -434,6 +434,13 @@ a {
       color: black;
       font-size: 1.1em;
 
+      .order-table-container {
+        display: flex;
+        height: 30vh;
+        justify-content: space-evenly;
+        margin: auto;
+      }
+
       .general-orders {
         display: flex;
         font-size: 1.3em;
@@ -459,11 +466,14 @@ a {
 
       
 
-      .today-orders {
+      .today-orders, 
+      .today-cust-orders, 
+      .all-cust-orders {
         border: 2px solid black;
-        margin: 1.5em;
         width: 25vw;
         border-radius: 5px;
+        height: 100%;
+        display: inline-block
       }
     }
   } 
