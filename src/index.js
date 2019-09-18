@@ -72,6 +72,7 @@ $(document).ready(() => {
     $('.cust-search-input').val('');
     $('.customer-search-display').empty();
     $('.book-room-button').attr("disabled", true);
+    $('.orders-alias-1').text('selected customer')
   });
 
   function arrangeForSelectedCustomer() {
@@ -124,12 +125,14 @@ $(document).ready(() => {
     let selectedDate = $('.order-datepicker').val();
     if ($('.order-datepicker').val() !== '') {
       domUpdates.displayTodayOrders(hotel.getRoomServicesByDay(selectedDate), $('.today-service-disp'));
-      if (hotel.selectedCustomer) {
-        let custServices = hotel.selectedCustomer.getRoomServicesByDate(selectedDate);
-        domUpdates.displayTodayOrders(custServices, $('.today-cust-display'));
-      }
-      console.log(hotel.getRoomServicesByDay(selectedDate))
     } 
+    if (hotel.selectedCustomer) {
+      let custServices = hotel.selectedCustomer.getRoomServicesByDate(selectedDate);
+      console.log(custServices)
+      domUpdates.displayTodayOrders(custServices, $('.today-cust-disp'));
+      $('.orders-alias-1').text(`${hotel.selectedCustomer.name}`)
+    }
+    console.log(hotel.getRoomServicesByDay(selectedDate))
   })
 
 

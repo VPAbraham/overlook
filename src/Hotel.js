@@ -12,7 +12,7 @@ class Hotel {
     this.roomServices = roomServiceData.roomServices;
     this.customers = [];
     this.bookingDb;
-    this.selectedCustomer;
+    this.selectedCustomer = undefined;
     this.selectedRoom;
     this.hotelPrepHandler()
   }
