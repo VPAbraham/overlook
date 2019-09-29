@@ -2,6 +2,8 @@
 
 #### A Turing Module 2 Project
 
+(Link to project)[https://vpabraham.github.io/overlook/]
+
 ### Background:
 Overlook is a hotel management app that uses mock data to simulate the every day functions such an app might use. The user can select customers and view and alter different pieces of data related to their booking.
 
